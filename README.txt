@@ -1,1 +1,1 @@
-Some line
+Welcome to Lam's not-so-personal repository!
