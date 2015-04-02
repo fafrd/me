@@ -1,4 +1,7 @@
-/*#include <iostream>
+/*
+int main 
+{
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -6,7 +9,7 @@
 #include <iomanip> //color and format
 #include <time.h>
 
-/*#define RESET   "\033[0m"
+#define RESET   "\033[0m"
 #define BLACK   "\033[30m"      // Black
 #define RED     "\033[31m"      // Red
 #define GREEN   "\033[32m"      // Green 
@@ -23,6 +26,7 @@
 #define BOLDMAGENTA "\033[1m\033[35m"      // Bold Magenta 
 #define BOLDCYAN    "\033[1m\033[36m"      // Bold Cyan 
 #define BOLDWHITE   "\033[1m\033[37m"      // Bold White 
+}
 */
 
 #include "jap.h"
