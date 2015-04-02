@@ -1,0 +1,48 @@
+kore=this one=これ=
+sore=that one=それ=
+are=that one (over there)=あれ=
+dore=which one=どれ=
+kono=this...=この=
+sono=that...=その=
+ano=that...(over there)=あの=
+dono=which...=どの=
+koko=here=ここ=
+soko=there=そこ=
+asoko=over there=あそこ=
+doko=where=どこ=
+dare=who=だれ=
+oishii=delicious=おいしい=
+sakana=fish=さかな=
+tonkatsu=pork cutlet=とんかつ=
+niku=meat=にく=
+menyuu=menu=メニュー=
+yasai=vegetable=やさい=
+enpitsu=pencil=えんぴつ=
+kasa=umbrella=かさ=
+kaban=bag=かばん=
+kutsu=shoes=くつ=
+saifu=wallet=さいふ=
+jiinzu=jeans=ジーンズ=
+jisho=dictionary=じしょ=
+jitensha=bicycle=じてんしゃ=
+shinbun=newspaper=しんぶん=
+tiishatsu=t-shirt=Tシャツ=
+tokee=watch=とけい=
+nooto=notebook=ノート=
+pen=pen=ペン=
+booshi=hat=ぼうし=
+hon=book=ほん=
+kissaten=cafe=きっさてん=
+ginkoo=bank=ぎんこう=
+toire=toilet=トイレ=
+toshokan=library=としょかん=
+yuubinkyoku=post office=ゆうびんきょく=
+ikura=how much=いくら=
+en=yen=えん=
+takai=expensive=たかい=
+irasshaimase=welcome (to our store)=いらっしゃいませ=
+(...o) onegaishimasu=...please=（～を）おねがいします=
+(...o) kudasai=please give me...=（～を）ください=
+jaa=if that, then...=じゃあ=
+doozo=please, here it is=どうぞ=
+doomo=thank you=どうも=

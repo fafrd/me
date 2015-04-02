@@ -1,0 +1,7 @@
+//3=
+okiru=to get up=おきる=
+taberu=to eat=たべる=
+neru=to sleep/to go to sleep=ねる=
+miru=to see/to look at/to watch=みる=
+//4=
+iru=to be there (living object)=いる=

@@ -1,0 +1,54 @@
+migi=right=みぎ=
+hidari=left=ひだり=
+mae=front=まえ=
+ushiro=back=うしろ=
+naka=inside=なか=
+ue=on=うえ=
+shita=under=した=
+chikaku=near=ちかく=
+tonari=next=となり=
+aida=between=あいだ=
+takusan=many=たくさん=
+hitoride=alone=ひとりで=
+~to=together with (a person)=～と=
+~gurai=about (measurement)=～ぐらい=
+dakara=so; therefore=だから=
+gomennasai=I'm sorry=ごめんなさい=
+dooshite=why=どうして=
+arubaito=part-time job=アルバイト=
+kaimono=shopping=かいもの=
+kurasu=class=クラス=
+isu=chair=いす=
+tsukue=desk=つくえ=
+shashin=picture=しゃしん=
+tegami=letter=てがみ=
+meeru=e-mail=メール=
+omiyage=souvenir=おみやげ=
+gohan=rice=ごはん=
+pan=bread=パン=
+inu=dog=いぬ=
+neko=cat=ねこ=
+kodomo=child=こども=
+hito=person=ひと=
+anata=you=あなた=
+suupaa=supermarket=スーパー=
+depaato=department store=デパート=
+hoteru=hotel=ホテル=
+resutoran=restaurant=レストラン=
+pasutei=bus stop=パスてい=
+otera=temple=おてら=
+kooen=park=こうえん=
+byooin=hospital=びょういん=
+honya=bookstore=ほんや=
+machi=town; city=まち=
+toki=when=とき=
+~jikan=~hours=～じかん=
+kinoo=yesterday=きのう=
+senshuu=last week=せんしゅう=
+getsuyoobi=monday=げつようび=
+kayoobi=tuesday=かようび=
+suiyoobi=wednesday=すいようび=
+mokuyoobi=thursday=もくようび=
+kinyoobi=friday=きんようび=
+doyoobi=saturday=どようび=
+nichiyoobi=sunday=にちようび=

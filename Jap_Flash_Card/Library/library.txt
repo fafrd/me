@@ -1,0 +1,6 @@
+lesson1=
+lesson2=
+lesson3=
+lesson4=
+ru_verb=
+u_verb_irr=

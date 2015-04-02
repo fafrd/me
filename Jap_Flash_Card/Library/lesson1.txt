@@ -1,0 +1,33 @@
+ohaiyo=good morning= =
+konnichiwa=good afteernoon= =
+konbanwa=good evening= =
+itadakimasu=thank you for the meal: before= =
+gochisoosama=thank you for the meal: after= =
+sumimasen=excuse me= =
+sayoonara=good bye= =
+arigato=thank you= =
+ittekimasu=i will go and come back= =
+itterassai=please go and come back= =
+oyasumi=good night= =
+tadaima=im home= =
+okaeri=welcome home= =
+hajimemashite=how do you do= =
+kagaku=science= =
+seeji=politics= =
+rekishi=history= =
+keesai=econ= =
+jinruigaku=anthro= =
+bungaku=literature= =
+ajian kenkyuu=asian study= =
+kokusaikankee=international relation= =
+shigoto=job= =
+isha=doctor= =
+kaishain=office worker= =
+bengoshi=lawyer= =
+shufu=housewife= =
+okaasan=mother= =
+otoosan=father= =
+imooto=younger sister= =
+otooto=younger brother= =
+oniisan=older brother= =
+oneesan=older sister= =

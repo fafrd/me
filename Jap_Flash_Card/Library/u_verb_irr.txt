@@ -1,0 +1,18 @@
+//3=
+iku=to go=いく=
+kaeru=to go back/to return=かえる=
+kiku=to listen/to hear=きく=
+nomu=to drink=のむ=
+hanasu=to speak/to talk=はなす=
+yomu=to read=よむ=
+kuru (irr)=to come=くる=
+suru (irr)=to do=する=
+benkyoosuru (irr)=to study=べんきょうする=
+//4=
+au=to meet=あう=
+aru=to be there (non-living object)=ある=
+kau=to buy=かう=
+kaku=to write=かく=
+toru=to take=とる=
+matsu=to wait=まつ=
+wakaru=to understand=わかる=

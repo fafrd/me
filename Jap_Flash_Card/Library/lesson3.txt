@@ -1,0 +1,43 @@
+eiga=movie=えいが=
+ongaku=music=おんがく=
+zasshi=magazine=ざっし=
+supootsu=sports=スポーツ=
+deeto=date=デート=
+tenisu=tennis=テニス=
+terebi=TV=テレビ=
+aisukuriimu=ice cream=アイスクリーム=
+asagohan=breakfast=あさごはん=
+hirugohan=lunch=ひるごはん=
+bangohan=dinner=ばんごはん=
+osake=sake=おさけ=
+ocha=green tea=おちゃ=
+koohii=coffee=コーヒー=
+hanbaagaa=hamburger=ハンバーガー=
+mizu=water=みず=
+ie=home/house=いえ=
+uchi=home/house/my place=うち=
+gakkoo=school=がっこう=
+kyookai=church=きょうかい=
+asa=morning=あさ=
+konban=tonight=こんばん=
+kyoo=today=きょう=
+ashita=tomorrow=あした=
+itsu=when=いつ=
+~goro=at about...=～ごろ=
+shuumatsu=weekend=しゅうまつ=
+doyoobi=saturday=どようび=
+nichiyoobi=sunday=にちようび=
+mainichi=every day=まいにち=
+maiban=every night=まいばん=
+ii=good=いい=
+hayai=early=はやい=
+amari~=not much=あまり～=
+zenzen~=not at all=ぜんぜん～=
+chotto=a little=ちょっと=
+itsumo=always=いつも=
+taitei=usually=たいてい=
+yoku=often/much=よく=
+tokidoki=sometimes=ときどき=
+soodesune=that's right/let me see=そうですね=
+demo=but=でも=
+doodesuka=how about.../how is...=どうですか=
