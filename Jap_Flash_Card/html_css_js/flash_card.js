@@ -14,4 +14,13 @@ function execute()
 	else
 		document.getElementById("result").innerHTML = "right!";
 	index++;
+	window.setTimeout('show()',500);
+	window.setTimeout('document.getElementById("result").innerHTML = "";',500);
+	window.setTimeout('document.getElementById("inputBox").value = ""',500);
+}
+
+function keyPress(e)
+{
+	if (e == 13)
+		document.getElementById('submitButton').click();
 }
