@@ -33,6 +33,7 @@ function execute()
 	else
 		document.getElementById("result").innerHTML = "right!";
 	index++;
+	if(index >= library[i].length) index = 1;
 	window.setTimeout('show()',500);
 	window.setTimeout('document.getElementById("result").innerHTML = "";',500);
 	window.setTimeout('document.getElementById("inputBox").value = ""',500);

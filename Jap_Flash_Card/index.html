@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample Text 1</title>
+	<script src="Library/JCLibrary/library.js"></script>
+	<script src="html_css_js/flash_card.js"></script>
+</head>
+<body>
+	<input type="radio" name="lesson" id="lessonChoice" value="lesson1" onclick="chooseLesson(document.getElementsByName('lesson')[0]);" checked>Lesson 1<br>
+	<input type="radio" name="lesson" id="lessonChoice" value="lesson2" onclick="chooseLesson(document.getElementsByName('lesson')[1]);">Lesson 2<br>
+	<input type="radio" name="lesson" id="lessonChoice" value="lesson3" onclick="chooseLesson(document.getElementsByName('lesson')[2]);">Lesson 3<br>
+	<input type="radio" name="lesson" id="lessonChoice" value="lesson4" onclick="chooseLesson(document.getElementsByName('lesson')[3]);">Lesson 4<br>
+	<input type="radio" name="lesson" id="lessonChoice" value="ru_verb" onclick="chooseLesson(document.getElementsByName('lesson')[4]);">ru Verb<br>
+	<input type="radio" name="lesson" id="lessonChoice" value="u_verb_irr" onclick="chooseLesson(document.getElementsByName('lesson')[5]);">u Verb and Irregular<br>
+
+	<div id="question"><script>show();</script></div>
+	<input name="inputBox" id="inputBox" type="text" onkeydown="keyPress(event.keyCode);" autocomplete="off"/>
+	<input name="submit" id="submitButton" type="submit" onclick="execute();" />
+	<div id="result"></div>
+</body>
+</html>
