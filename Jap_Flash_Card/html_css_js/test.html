@@ -6,9 +6,12 @@
 <body>
 	<script src="../Library/JCLibrary/lesson1.js"></script>
 	<script src="flash_card.js"></script>
-	<div id="question"></div>
-	<input name="inputBox" id="inputBox" type="text" />
-	<input name="buttonExecute" onclick="execute();show()" type="button" value="Execute" />
+	<div id="question">
+		<script>show();</script>
+	</div>
+	<form action="#" onsubmit="execute();show();">
+		<input name="inputBox" id="inputBox" type="text" />
+	</form>
 	<div id="result"></div>
 </body>
 </html>
