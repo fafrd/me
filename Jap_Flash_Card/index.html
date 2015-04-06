@@ -6,16 +6,16 @@
 	<script type: "text/javascript" charset="utf-8" src="html_css_js/flash_card.js"></script>
 </head>
 <body>
-	<input type="radio" name="lesson" id="lesson1" value="lesson1" onclick="chooseLesson(document.getElementsByName('lesson')[0]);" checked><label for="lesson1">Lesson 1</label><br>
-	<input type="radio" name="lesson" id="lesson2" value="lesson2" onclick="chooseLesson(document.getElementsByName('lesson')[1]);"><label for="lesson2">Lesson 2</label><br>
-	<input type="radio" name="lesson" id="lesson3" value="lesson3" onclick="chooseLesson(document.getElementsByName('lesson')[2]);"><label for="lesson3">Lesson 3</label><br>
-	<input type="radio" name="lesson" id="lesson4" value="lesson4" onclick="chooseLesson(document.getElementsByName('lesson')[3]);"><label for="lesson4">Lesson 4</label><br>
-	<input type="radio" name="lesson" id="ru_verb" value="ru_verb" onclick="chooseLesson(document.getElementsByName('lesson')[4]);"><label for="ru_verb">ru Verb</label><br>
-	<input type="radio" name="lesson" id="u_verb_irr" value="u_verb_irr" onclick="chooseLesson(document.getElementsByName('lesson')[5]);"><label for="u_verb_irr">u Verb and Irregular</label><br>
+	<input type="radio" name="lesson" id="lesson1" 		value="lesson1" 	onclick="chooseLesson(document.getElementsByName('lesson')[0]);" checked>	<label for="lesson1">	Lesson 1 			</label><br>
+	<input type="radio" name="lesson" id="lesson2" 		value="lesson2" 	onclick="chooseLesson(document.getElementsByName('lesson')[1]);">			<label for="lesson2">	Lesson 2 			</label><br>
+	<input type="radio" name="lesson" id="lesson3" 		value="lesson3" 	onclick="chooseLesson(document.getElementsByName('lesson')[2]);">			<label for="lesson3">	Lesson 3 			</label><br>
+	<input type="radio" name="lesson" id="lesson4" 		value="lesson4" 	onclick="chooseLesson(document.getElementsByName('lesson')[3]);">			<label for="lesson4">	Lesson 4 			</label><br>
+	<input type="radio" name="lesson" id="ru_verb" 		value="ru_verb" 	onclick="chooseLesson(document.getElementsByName('lesson')[4]);">			<label for="ru_verb">	ru Verb 			</label><br>
+	<input type="radio" name="lesson" id="u_verb_irr" 	value="u_verb_irr" 	onclick="chooseLesson(document.getElementsByName('lesson')[5]);">			<label for="u_verb_irr">u Verb and Irregular</label><br>
 
 	<div id="question"><script>show();</script></div>
-	<input name="inputBox" id="inputBox" type="text" onkeydown="keyPress(event.keyCode);" autocomplete="off"/>
-	<input name="submit" id="submitButton" type="submit" onclick="execute();" />
+	<input name="inputBox" id="inputBox" type="text" onkeydown="keyPress(event.keyCode);" autocomplete="off">
+	<input name="submit" id="submitButton" type="submit" onclick="execute();">
 	<div id="result"></div>
 </body>
 </html>
