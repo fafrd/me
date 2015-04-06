@@ -6,6 +6,7 @@ function chooseLesson(input)
 {
 	lessonName = input.value;
 	index = 0;
+	execute();
 }
 
 function findIndex(lessonName)
@@ -27,13 +28,21 @@ function show()
 function execute()
 {
 	var i = findIndex(lessonName);
-	input = document.getElementById("inputBox").value;
-	if(library[i][index].romanji == input || library[i][index].jap == input)
-		document.getElementById("result").innerHTML = "right!";
+	if(index == 0)
+	{
+		document.getElementById("question").innerHTML = "Loading lesson: " + library[i][0];
+		index++;
+	}
 	else
-		document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].romanji;
-	index++;
-	if(index >= library[i].length) index = 1;
+	{
+		input = document.getElementById("inputBox").value;
+		if(library[i][index].romanji == input || library[i][index].jap == input)
+			document.getElementById("result").innerHTML = "right!";
+		else
+			document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].romanji;
+		index++;
+		if(index >= library[i].length) index = 1;
+	}
 	window.setTimeout('show()',500);
 	window.setTimeout('document.getElementById("result").innerHTML = "";',3000);
 	window.setTimeout('document.getElementById("inputBox").value = ""',500);
