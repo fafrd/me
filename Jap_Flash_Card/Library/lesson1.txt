@@ -1,33 +1,33 @@
-ohaiyo=good morning= =
-konnichiwa=good afternoon= =
-konbanwa=good evening= =
-itadakimasu=thank you for the meal: before= =
-gochisoosama=thank you for the meal: after= =
-sumimasen=excuse me= =
-sayoonara=good bye= =
-arigato=thank you= =
-ittekimasu=i will go and come back= =
-itterassai=please go and come back= =
-oyasumi=good night= =
-tadaima=im home= =
-okaeri=welcome home= =
-hajimemashite=how do you do= =
-kagaku=science= =
-seeji=politics= =
-rekishi=history= =
-keesai=econ= =
-jinruigaku=anthro= =
-bungaku=literature= =
-ajian kenkyuu=asian study= =
-kokusaikankee=international relation= =
-shigoto=job= =
-isha=doctor= =
-kaishain=office worker= =
-bengoshi=lawyer= =
-shufu=housewife= =
-okaasan=mother= =
-otoosan=father= =
-imooto=younger sister= =
-otooto=younger brother= =
-oniisan=older brother= =
-oneesan=older sister= =
+ohayoo=good morning=おはよう=
+konnichiwa=good afternoon=こんにちは=
+konbanwa=good evening=こんばんは=
+itadakimasu=thank you for the meal: before=いただきます=
+gochisoosama=thank you for the meal: after=ごちそうさま=
+sumimasen=excuse me=すみません=
+sayoonara=good bye=さようなら=
+arigato=thank you=ありがと=
+ittekimasu=i will go and come back=いってきます=
+itterassai=please go and come back=いってらっさい=
+oyasumi=good night=おやすみ=
+tadaima=im home=ただいま=
+okaeri=welcome home=おかえり=
+hajimemashite=how do you do=はじめまして=
+kagaku=science=かがく=
+seeji=politics=せいじ=
+rekishi=history=れきし=
+keesai=econ=けいさい=
+jinruigaku=anthro=じんるいがく=
+bungaku=literature=ぶんがく=
+ajian kenkyuu=asian study=あじあんけんきゅう=
+kokusaikankee=international relation=こくさいかんけい=
+shigoto=job=しごと=
+isha=doctor=いしゃ=
+kaishain=office worker=かいしゃいん=
+bengoshi=lawyer=べんごし=
+shufu=housewife=しゅふ=
+okaasan=mother=おかあさん=
+otoosan=father=おとおさん=
+imooto=younger sister=いもおと=
+otooto=younger brother=おとおと=
+oniisan=older brother=おにいさん=
+oneesan=older sister=おねえさん=
