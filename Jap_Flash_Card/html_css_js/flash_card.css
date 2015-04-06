@@ -1,0 +1,185 @@
+body
+{
+	background-color: white;
+	margin: 0;
+	border: 0;
+    padding: 0;
+}
+div
+{
+	border: none;
+	margin: none;
+	padding: 0 0 0 0;
+}
+
+/*div.menu family*/
+
+.menu
+{
+	position: fixed;
+	background-color: #3366FF;
+	width: 75px;
+	height: 100%;
+	z-index: 3;
+	padding-top: 1em;
+	box-shadow:2px 2px 5px #1F1F1F;
+}
+
+.menu .button
+{
+	padding: 0.5em 0 1em 0.3em;
+}
+
+.menu .description
+{
+	position: absolute;
+	left: 100%;
+	background-color: white;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+	box-shadow:2px 2px 5px #1F1F1F;
+
+	text-align: left;
+	color: #3366FF;
+	font: 30px arial;
+	width: 10em;
+	padding: 0.5em;
+}
+
+/*button*/
+div.menu .button img.default
+{
+	display: block;
+}
+div.menu .button img.alt, .description
+{
+	display: none;
+}
+
+div.menu .button:hover img.default
+{
+	display: none;
+}
+div.menu .button:hover img.alt
+{
+	display: block;
+}
+div.menu .button:hover .description
+{
+	display: inline-block;
+}
+
+/*fixed left*/
+div.left
+{
+	position: fixed;
+	background-color: #3366FF;
+	left: 5%;
+	width: 45%;
+	height: 100%;
+	z-index: 1;
+	box-shadow: 2px 2px 5px #1F1F1F;
+}
+
+/*default*/
+#default
+{
+	position: fixed;
+	left: 5%;
+	width: 45%;
+	height: 100%;
+	font: bold 50px arial;
+	text-align: center;
+	color: white;
+	padding-top: 0.5em;
+	box-shadow: 2px 2px 5px #1F1F1F;
+	-webkit-transition-duration: 0.3s;
+  	-moz-transition-duration: 0.3s;
+  	-o-transition-duration: 0.3s;
+  	transition-duration: 0.3s;
+}
+#default p
+{
+	font: normal 20px arial;
+}
+
+/*lesson family*/
+#lesson
+{
+	position: fixed;
+	left: 100%;
+	background-color: #3366FF;
+	left: -45%;
+	width: 45%;
+	height: 50%;
+	box-shadow: 2px 2px 5px #1F1F1F;
+	-webkit-transition-duration: 0.3s;
+  	-moz-transition-duration: 0.3s;
+  	-o-transition-duration: 0.3s;
+  	transition-duration: 0.3s;
+}
+#lesson:target
+{
+	left: 5%;
+}
+
+div.lesson h1
+{
+	font: bold 50px arial;
+	text-align: center;
+	color: white;
+}
+
+div.lesson ul
+{
+	list-style: none;
+}
+
+div.lesson ul li
+{
+	display: inline-block;
+}
+
+div.lesson ul li button
+{
+	font: 40px arial;
+	background-color: white;
+	margin: 0.5em 1em 0.5em 1em;
+	padding: 0.5em 1em 0.5em 1em;
+}
+
+div.lesson ul li button:hover
+{
+	color: #009933;
+	background-color: lightgray;
+}
+
+div.lesson ul li button:active
+{
+	color: white;
+	background-color: lightgray;
+}
+
+/*fixed right*/
+.right
+{
+	position: fixed;
+	background-color: #3366FF;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+}
+
+/*credit*/
+/*.credit
+{
+	left: 1%;
+	bottom: 1%;
+	font: 12px arial;
+	text-align: left;
+	color: white;
+	background-color: #3366FF;
+	border-radius: 12px;
+	box-shadow:2px 2px 5px #2952CC;
+	z-index: 100;
+}*/
