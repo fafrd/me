@@ -1,15 +1,34 @@
-var index = 0;
+var lessonName = "lesson1";
+var index = 1;
 var input = "";
+
+function chooseLesson(input)
+{
+	lessonName = input.value;
+	index = 0;
+}
+
+function findIndex(lessonName)
+{
+	var i = 0;
+	while(i < library.length)
+	{
+		if(library[i][0] == lessonName) return i;
+		i++;
+	}
+}
 
 function show()
 {
-	document.getElementById("question").innerHTML = dictionary[index].eng;
+	var i = findIndex(lessonName);
+	document.getElementById("question").innerHTML = library[i][index].eng;
 }
 
 function execute()
 {
+	var i = findIndex(lessonName);
 	input = document.getElementById("inputBox").value;
-	if(dictionary[index].romanji != input)
+	if(library[i][index].romanji != input)
 		document.getElementById("result").innerHTML = "wrong!";
 	else
 		document.getElementById("result").innerHTML = "right!";

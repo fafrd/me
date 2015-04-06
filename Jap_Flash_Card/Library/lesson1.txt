@@ -1,5 +1,5 @@
 ohaiyo=good morning= =
-konnichiwa=good afteernoon= =
+konnichiwa=good afternoon= =
 konbanwa=good evening= =
 itadakimasu=thank you for the meal: before= =
 gochisoosama=thank you for the meal: after= =

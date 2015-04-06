@@ -22,22 +22,26 @@ int main()
 		lib.push_back(input);
 	}
 	LIB.close();
+	ofstream writeFile("../library.js");
+	writeFile.close();
 
 	int i = 0;
 	while(i < lib.size())
 	{
 		string readfilename = lib[i];
+		string filename = readfilename;
 
-		string writefilename = readfilename + ".js";
-		readfilename = readPath + readfilename + ".txt";
-
+		string writefilename = "library.js";
 		writefilename = writePath + writefilename;
+
+		readfilename = readPath + readfilename + ".txt";
 
 		ifstream readFile(readfilename.c_str());
 
-		ofstream writeFile(writefilename.c_str());
-		writeFile << "var dictionary = \n";
+		ofstream writeFile(writefilename.c_str(), std::ios_base::app);
+		writeFile << "var " << filename << " = \n";
 		writeFile << "[\n";
+		writeFile << "\t" << "\"" << filename << "\",\n";
 
 		while(!readFile.eof())
 		{
@@ -85,6 +89,20 @@ int main()
 		writeFile.close();
 		i++;
 	}
+
+	//write the library array
+	ofstream AnotherwriteFile("../library.js", std::ios_base::app);
+	AnotherwriteFile << "var library =\n";
+	AnotherwriteFile << "[\n";
+	i = 0;
+	while(i < lib.size())
+	{
+		AnotherwriteFile << "\t" << lib[i] << ",\n";
+		i++;
+	}
+	AnotherwriteFile << "];";
+	AnotherwriteFile.close();
+
 	cout << "Done!" << endl;
 	return 0;
 }
