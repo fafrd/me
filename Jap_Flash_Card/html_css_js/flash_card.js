@@ -28,14 +28,14 @@ function execute()
 {
 	var i = findIndex(lessonName);
 	input = document.getElementById("inputBox").value;
-	if(library[i][index].romanji != input)
-		document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].romanji;
-	else
+	if(library[i][index].romanji == input || library[i][index].jap == input)
 		document.getElementById("result").innerHTML = "right!";
+	else
+		document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].romanji;
 	index++;
 	if(index >= library[i].length) index = 1;
 	window.setTimeout('show()',500);
-	window.setTimeout('document.getElementById("result").innerHTML = "";',2000);
+	window.setTimeout('document.getElementById("result").innerHTML = "";',3000);
 	window.setTimeout('document.getElementById("inputBox").value = ""',500);
 }
 
