@@ -116,7 +116,7 @@ function execute()
 	log(" ");
 	window.setTimeout('show()',500);
 	window.setTimeout('document.getElementById("result").innerHTML = "-";',3000);
-	window.setTimeout('document.getElementById("inputBox").value = "";',500);
+	window.setTimeout('document.getElementById("inputBox").value = "";',0);
 }
 
 function keyPress(e)
