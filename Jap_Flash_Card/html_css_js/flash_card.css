@@ -74,7 +74,8 @@ div.left
 {
 	position: fixed;
 	background-color: #3366FF;
-	left: 5%;
+	left: 0%;
+	padding: 0 0 0 5%;
 	width: 45%;
 	height: 100%;
 	z-index: 1;
@@ -85,14 +86,13 @@ div.left
 #default
 {
 	position: fixed;
-	left: 5%;
+	left: 0%;
+	padding: 0.5em 0 0 5%;
 	width: 45%;
 	height: 100%;
 	font: bold 50px arial;
 	text-align: center;
 	color: white;
-	padding-top: 0.5em;
-	box-shadow: 2px 2px 5px #1F1F1F;
 	-webkit-transition-duration: 0.3s;
   	-moz-transition-duration: 0.3s;
   	-o-transition-duration: 0.3s;
@@ -107,9 +107,9 @@ div.left
 #lesson
 {
 	position: fixed;
-	left: 100%;
 	background-color: yellow;
-	left: -45%;
+	padding: 0.5em 0 0 5%;
+	left: -50%;
 	width: 45%;
 	height: 50%;
 	box-shadow: 2px 2px 5px #1F1F1F;
@@ -120,15 +120,15 @@ div.left
 }
 #lesson:target
 {
-	left: 5%;
+	left: 0%;
 }
 
 #mode
 {
 	position: fixed;
-	left: 100%;
 	background-color: green;
-	left: -45%;
+	padding: 0.5em 0 0 5%;
+	left: -50%;
 	width: 45%;
 	height: 50%;
 	box-shadow: 2px 2px 5px #1F1F1F;
@@ -139,7 +139,7 @@ div.left
 }
 #mode:target
 {
-	left: 5%;
+	left: 0%;
 }
 
 /*fixed right*/
