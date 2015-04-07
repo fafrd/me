@@ -168,7 +168,7 @@ div.left
 	background-color: black;
 	color: white;
 	overflow: auto;
-	padding: 0 1em 0 1em;
+	padding: 0.5em 1em 0em 1em;
 	height: 90%;
 	width: 92%;
 }
