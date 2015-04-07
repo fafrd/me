@@ -145,12 +145,22 @@ div.left
 /*fixed right*/
 .right
 {
-	padding: 0 1em 0 1em;
+	padding: 1em 0em 0 2em;
 	position: fixed;
 	background-color: #3366FF;
 	left: 50%;
 	width: 50%;
 	height: 100%;
+}
+
+#question
+{
+	color: white;
+}
+
+#result
+{
+	color: white;
 }
 
 .log
