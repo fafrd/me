@@ -18,7 +18,7 @@ div
 {
 	position: fixed;
 	background-color: #3366FF;
-	width: 75px;
+	width: 77px;
 	height: 100%;
 	z-index: 3;
 	padding-top: 1em;
@@ -108,66 +108,59 @@ div.left
 {
 	position: fixed;
 	left: 100%;
-	background-color: #3366FF;
+	background-color: yellow;
 	left: -45%;
 	width: 45%;
 	height: 50%;
 	box-shadow: 2px 2px 5px #1F1F1F;
-	-webkit-transition-duration: 0.3s;
-  	-moz-transition-duration: 0.3s;
-  	-o-transition-duration: 0.3s;
-  	transition-duration: 0.3s;
+	-webkit-transition-duration: 0.6s;
+  	-moz-transition-duration: 0.6s;
+  	-o-transition-duration: 0.6s;
+  	transition-duration: 0.6s;
 }
 #lesson:target
 {
 	left: 5%;
 }
 
-div.lesson h1
+#mode
 {
-	font: bold 50px arial;
-	text-align: center;
-	color: white;
+	position: fixed;
+	left: 100%;
+	background-color: green;
+	left: -45%;
+	width: 45%;
+	height: 50%;
+	box-shadow: 2px 2px 5px #1F1F1F;
+	-webkit-transition-duration: 0.6s;
+  	-moz-transition-duration: 0.6s;
+  	-o-transition-duration: 0.6s;
+  	transition-duration: 0.6s;
 }
-
-div.lesson ul
+#mode:target
 {
-	list-style: none;
-}
-
-div.lesson ul li
-{
-	display: inline-block;
-}
-
-div.lesson ul li button
-{
-	font: 40px arial;
-	background-color: white;
-	margin: 0.5em 1em 0.5em 1em;
-	padding: 0.5em 1em 0.5em 1em;
-}
-
-div.lesson ul li button:hover
-{
-	color: #009933;
-	background-color: lightgray;
-}
-
-div.lesson ul li button:active
-{
-	color: white;
-	background-color: lightgray;
+	left: 5%;
 }
 
 /*fixed right*/
 .right
 {
+	padding: 0 1em 0 1em;
 	position: fixed;
 	background-color: #3366FF;
 	left: 50%;
-	width: 100%;
+	width: 50%;
 	height: 100%;
+}
+
+.log
+{
+	background-color: black;
+	color: white;
+	overflow: auto;
+	padding: 0 1em 0 1em;
+	height: 90%;
+	width: 92%;
 }
 
 /*credit*/

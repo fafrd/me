@@ -59,7 +59,8 @@ function execute()
 	var i = findIndex(lessonName);
 	if(index === 0)
 	{
-		document.getElementById("question").innerHTML = "Loading lesson: " + library[i][0];
+		input = "";
+		document.getElementById("question").innerHTML = "● loading lesson: " + library[i][0];
 		if(random)
 		{
 			index = Math.floor((Math.random() * (library[findIndex(lessonName)].length-1)) + 1);
@@ -68,6 +69,7 @@ function execute()
 		{
 			index++;
 		}
+		log("● mode: " + mode + "	random: " + random + ".");
 	}
 	else
 	{
@@ -97,7 +99,7 @@ function execute()
 	console.log("output: " +document.getElementById("result").innerHTML);
 	console.log(" ");
 	log(document.getElementById("question").innerHTML);
-	log("input: 	" + input);
+	log("input: " + input);
 	log("output: " +document.getElementById("result").innerHTML);
 	log(" ");
 	window.setTimeout('show()',500);
@@ -117,4 +119,8 @@ function log(input)
 	log.innerHTML += input;
 	var br = document.createElement("br");
     log.appendChild(br);
+    /*auto scroll to bottom*/
+	var chat_div = document.getElementById('log');
+	chat_div.scrollTop = chat_div.scrollHeight;
 }
+
