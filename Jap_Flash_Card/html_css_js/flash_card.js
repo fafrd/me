@@ -1,10 +1,18 @@
 var lessonName = "lesson1";
 var index = 1;
 var input = "";
+var mode = 1;
 
 function chooseLesson(input)
 {
 	lessonName = input.value;
+	index = 0;
+	execute();
+}
+
+function chooseMode(input)
+{
+	mode = input.value;
 	index = 0;
 	execute();
 }
@@ -22,13 +30,25 @@ function findIndex(lessonName)
 function show()
 {
 	var i = findIndex(lessonName);
-	document.getElementById("question").innerHTML = index + "/" + (library[i].length-1) + ": " + library[i][index].eng;
+	switch(mode)
+	{
+		case 1:
+		{
+			document.getElementById("question").innerHTML = index + "/" + (library[i].length-1) + ": " + library[i][index].romanji + " " + library[i][index].jap;
+			break;
+		}
+		case 2:
+		{
+			document.getElementById("question").innerHTML = index + "/" + (library[i].length-1) + ": " + library[i][index].eng;
+			break;
+		}
+	}
 }
 
 function execute()
 {
 	var i = findIndex(lessonName);
-	if(index == 0)
+	if(index === 0)
 	{
 		document.getElementById("question").innerHTML = "Loading lesson: " + library[i][0];
 		index++;
@@ -36,10 +56,25 @@ function execute()
 	else
 	{
 		input = document.getElementById("inputBox").value;
-		if(library[i][index].romanji == input || library[i][index].jap == input)
-			document.getElementById("result").innerHTML = "right!";
-		else
-			document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].romanji;
+		switch(mode)
+		{
+			case 1:
+			{
+				if(library[i][index].eng == input)
+					document.getElementById("result").innerHTML = "right!";
+				else
+					document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].eng;
+				break;
+			}
+			case 2:
+			{
+				if(library[i][index].romanji == input || library[i][index].jap == input)
+					document.getElementById("result").innerHTML = "right!";
+				else
+					document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].romanji + " " + library[i][index].jap;
+				break;
+			}
+		}
 		index++;
 		if(index >= library[i].length) index = 1;
 	}
