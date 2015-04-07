@@ -4,6 +4,17 @@ var input = "";
 var mode = '1';
 var random = false;
 
+function findChecked(arrayInput)
+{
+	var i = 0;
+	while(i < arrayInput.length)
+	{
+		if(arrayInput[i].checked) return i;
+		i++;
+	}
+	return 0;
+}
+
 function chooseRandom()
 {
 	if(random) 	random = false;
@@ -17,14 +28,16 @@ function chooseRandom()
 
 function chooseLesson(input)
 {
-	lessonName = input.value;
+	var i = findChecked(input);
+	lessonName = input[i].value;
 	index = 0;
 	execute();
 }
 
 function chooseMode(input)
 {
-	mode = input.value;
+	var i = findChecked(input);
+	mode = input[i].value;
 	index = 0;
 	execute();
 }
