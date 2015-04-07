@@ -1,7 +1,19 @@
 var lessonName = "lesson1";
 var index = 1;
 var input = "";
-var mode = 1;
+var mode = '1';
+var random = false;
+
+function chooseRandom()
+{
+	if(random) 	random = false;
+	else
+	{
+		random = true;
+		index = Math.floor((Math.random() * (library[findIndex(lessonName)].length-1)) + 1);
+		show();
+	}
+}
 
 function chooseLesson(input)
 {
@@ -32,16 +44,13 @@ function show()
 	var i = findIndex(lessonName);
 	switch(mode)
 	{
-		case 1:
-		{
-			document.getElementById("question").innerHTML = index + "/" + (library[i].length-1) + ": " + library[i][index].romanji + " " + library[i][index].jap;
+		case '1':
+			document.getElementById("question").innerHTML = index + "/" + (library[i].length-1) + ": " + library[i][index].romanji + " --- " + library[i][index].jap;
 			break;
-		}
-		case 2:
-		{
+		case '2':
 			document.getElementById("question").innerHTML = index + "/" + (library[i].length-1) + ": " + library[i][index].eng;
 			break;
-		}
+		default: break;
 	}
 }
 
@@ -51,33 +60,42 @@ function execute()
 	if(index === 0)
 	{
 		document.getElementById("question").innerHTML = "Loading lesson: " + library[i][0];
-		index++;
+		if(random)
+		{
+			index = Math.floor((Math.random() * (library[findIndex(lessonName)].length-1)) + 1);
+		}
+		else
+		{
+			index++;
+		}
 	}
 	else
 	{
 		input = document.getElementById("inputBox").value;
 		switch(mode)
 		{
-			case 1:
-			{
+			case '1':
 				if(library[i][index].eng == input)
 					document.getElementById("result").innerHTML = "right!";
 				else
 					document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].eng;
 				break;
-			}
-			case 2:
-			{
+			case '2':
 				if(library[i][index].romanji == input || library[i][index].jap == input)
 					document.getElementById("result").innerHTML = "right!";
 				else
-					document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].romanji + " " + library[i][index].jap;
+					document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].romanji + " --- " + library[i][index].jap;
 				break;
-			}
+			default: break;
 		}
-		index++;
+		if(random) index = Math.floor((Math.random() * (library[i].length-1)) + 1);
+		else index++;
 		if(index >= library[i].length) index = 1;
 	}
+	console.log(document.getElementById("question").innerHTML);
+	console.log("input: 	" + input);
+	console.log("output: " +document.getElementById("result").innerHTML);
+	console.log(" ");
 	window.setTimeout('show()',500);
 	window.setTimeout('document.getElementById("result").innerHTML = "";',3000);
 	window.setTimeout('document.getElementById("inputBox").value = ""',500);
