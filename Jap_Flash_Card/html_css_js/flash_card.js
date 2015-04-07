@@ -14,6 +14,15 @@ function findChecked(arrayInput)
 	}
 	return 0;
 }
+function findIndex(lessonName)
+{
+	var i = 0;
+	while(i < library.length)
+	{
+		if(library[i][0] == lessonName) return i;
+		i++;
+	}
+}
 
 function chooseRandom()
 {
@@ -40,16 +49,6 @@ function chooseMode(input)
 	mode = input[i].value;
 	index = 0;
 	execute();
-}
-
-function findIndex(lessonName)
-{
-	var i = 0;
-	while(i < library.length)
-	{
-		if(library[i][0] == lessonName) return i;
-		i++;
-	}
 }
 
 function show()
@@ -135,5 +134,10 @@ function log(input)
     /*auto scroll to bottom*/
 	var chat_div = document.getElementById('log');
 	chat_div.scrollTop = chat_div.scrollHeight;
+}
+
+function clearlog()
+{
+	document.getElementById("log").innerHTML = "";
 }
 
