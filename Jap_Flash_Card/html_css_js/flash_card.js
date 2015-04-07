@@ -138,6 +138,6 @@ function log(input)
 
 function clearlog()
 {
-	document.getElementById("log").innerHTML = "Log:;
+	document.getElementById("log").innerHTML = "Log:";
 }
 
