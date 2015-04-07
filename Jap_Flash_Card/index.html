@@ -18,7 +18,6 @@
 	<div>Choose mode:</div>
 	<input class="radioMode" type="radio" name="mode" id="mode1" value="1" onclick="chooseMode(document.getElementsByName('mode')[0]);" checked>	<label for="mode1">Translate japanese words 	</label><br>
 	<input class="radioMode" type="radio" name="mode" id="mode2" value="2" onclick="chooseMode(document.getElementsByName('mode')[1]);" >			<label for="mode2">Translate english words 		</label><br><br>
-	
 	<input class="checkRandom" type="checkbox" name="random" id="random" onclick="chooseRandom();"> <label>Random</label><br><br>
 
 	
@@ -27,6 +26,7 @@
 		<input name="inputBox" id="inputBox" type="text" onkeydown="keyPress(event.keyCode);" autocomplete="off">
 		<input name="submit" id="submitButton" type="submit" onclick="execute();">
 	</div>
-	<div id="result"></div>
+	<div id="result">-</div><br>
+	<div id="log">Log:<br></div>
 </body>
 </html>

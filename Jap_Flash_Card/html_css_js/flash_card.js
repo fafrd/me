@@ -96,13 +96,25 @@ function execute()
 	console.log("input: 	" + input);
 	console.log("output: " +document.getElementById("result").innerHTML);
 	console.log(" ");
+	log(document.getElementById("question").innerHTML);
+	log("input: 	" + input);
+	log("output: " +document.getElementById("result").innerHTML);
+	log(" ");
 	window.setTimeout('show()',500);
-	window.setTimeout('document.getElementById("result").innerHTML = "";',3000);
-	window.setTimeout('document.getElementById("inputBox").value = ""',500);
+	window.setTimeout('document.getElementById("result").innerHTML = "-";',3000);
+	window.setTimeout('document.getElementById("inputBox").value = "";',500);
 }
 
 function keyPress(e)
 {
 	if (e == 13)
 		document.getElementById('submitButton').click();
+}
+
+function log(input)
+{
+	var log = document.getElementById("log");
+	log.innerHTML += input;
+	var br = document.createElement("br");
+    log.appendChild(br);
 }
