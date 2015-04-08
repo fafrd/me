@@ -1,3 +1,4 @@
+/*global settings*/
 body
 {
 	background-color: white;
@@ -10,6 +11,81 @@ div
 	border: none;
 	margin: none;
 	padding: 0 0 0 0;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.title
+{
+	text-align: center;
+	color: white;
+	font: bold 3em 'Source Sans Pro', sans-serif;
+}
+
+input[type=checkbox]:not(old),
+input[type=radio   ]:not(old)
+{
+	visibility: hidden;
+	margin    : 0.2em;
+	opacity: 0;
+}
+input[type=checkbox]:not(old) + label,
+input[type=radio   ]:not(old) + label
+{
+	display      : inline-block;
+	margin-left  : -2em;
+	line-height  : 1.5em;
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+}
+input[type=checkbox]:not(old) + label:hover,
+input[type=radio   ]:not(old) + label:hover
+{
+	color: white;
+}
+input[type=checkbox]:not(old) + label > span,
+input[type=radio   ]:not(old) + label > span
+{
+	display          : inline-block;
+	width            : 0.875em;
+	height           : 0.875em;
+	margin           : 0.25em 0.5em 0.25em 0.25em;
+	border           : 0.0625em solid rgb(192,192,192);
+	border-radius    : 0.25em;
+	background       : rgb(224,224,224);
+	background-image :    -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+	background-image :     -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+	background-image :      -o-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+	background-image : -webkit-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+	background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
+	vertical-align   : bottom;
+}
+input[type=checkbox]:not(old):checked + label > span:before
+{
+	content     : '✓';
+	display     : block;
+	width       : 1em;
+	color       : rgb(153,204,102);
+	font-size   : 0.875em;
+	line-height : 1em;
+	text-align  : center;
+	text-shadow : 0 0 0.0714em rgb(115,153,77);
+	font-weight : bold;
+}
+input[type=radio]:not(old):checked +  label > span > span
+{
+	display          : block;
+	width            : 0.5em;
+	height           : 0.5em;
+	margin           : 0.125em;
+	border           : 0.0625em solid rgb(115,153,77);
+	border-radius    : 0.125em;
+	background       : rgb(153,204,102);
+	background-image :    -moz-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+	background-image :     -ms-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+	background-image :      -o-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+	background-image : -webkit-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+	background-image :         linear-gradient(rgb(179,217,140),rgb(153,204,102));
 }
 
 /*div.menu family*/
@@ -17,7 +93,7 @@ div
 .menu
 {
 	position: fixed;
-	background-color: #3366FF;
+	background-color: #9999FF;
 	width: 77px;
 	height: 100%;
 	z-index: 3;
@@ -73,7 +149,7 @@ div.menu .button:hover .description
 div.left
 {
 	position: fixed;
-	background-color: #3366FF;
+	background-color: #006699;
 	left: 0%;
 	padding: 0 0 0 5%;
 	width: 45%;
@@ -90,7 +166,7 @@ div.left
 	padding: 0.5em 0 0 5%;
 	width: 45%;
 	height: 100%;
-	font: bold 50px arial;
+	font: bold 3em 'Source Sans Pro', sans-serif;
 	text-align: center;
 	color: white;
 	-webkit-transition-duration: 0.3s;
@@ -100,14 +176,14 @@ div.left
 }
 #default p
 {
-	font: normal 20px arial;
+	font: normal 20px 'Source Sans Pro', sans-serif;
 }
 
 /*lesson family*/
 #lesson
 {
 	position: fixed;
-	background-color: yellow;
+	background-color: #009933;
 	padding: 0.5em 0 0 5%;
 	left: -50%;
 	width: 45%;
@@ -123,10 +199,31 @@ div.left
 	left: 0%;
 }
 
+.radioLesson .optionContainer
+{
+	width: 40%;
+	padding-left: 10%;
+	font-size: 1.3em;
+}
+
+.radioMode .optionContainer
+{
+	width: 40%;
+	padding-left: 10%;
+	font-size: 1.3em;
+}
+
+.radioMode .randomDiv
+{
+	width: 40%;
+	padding-left: 10%;
+	font-size: 1.3em;
+}
+
 #mode
 {
 	position: fixed;
-	background-color: green;
+	background-color: #CC6600;
 	padding: 0.5em 0 0 5%;
 	left: -50%;
 	width: 45%;
@@ -145,11 +242,11 @@ div.left
 /*fixed right*/
 .right
 {
-	padding: 1em 0em 0 2em;
+	padding: 2%;
 	position: fixed;
-	background-color: #3366FF;
+	background-color: #993333;
 	left: 50%;
-	width: 50%;
+	width: 46%;
 	height: 100%;
 }
 
@@ -168,9 +265,9 @@ div.left
 	background-color: black;
 	color: white;
 	overflow: auto;
-	padding: 0.5em 1em 0em 1em;
-	height: 90%;
-	width: 92%;
+	padding: 1%;
+	height: 80%;
+	width: 98%;
 }
 
 /*credit*/
