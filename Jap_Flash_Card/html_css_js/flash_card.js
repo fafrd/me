@@ -2,7 +2,7 @@ var lessonName = "lesson1";
 var index = 1;
 var input = "";
 var mode = '2';
-var random = false;
+var random = document.getElementById('random').checked;
 
 function findChecked(arrayInput)
 {
