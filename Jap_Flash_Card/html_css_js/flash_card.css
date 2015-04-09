@@ -13,6 +13,10 @@ div
 	padding: 0 0 0 0;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+label
+{
+	cursor: pointer;
+}
 
 input[type=checkbox]:not(old),
 input[type=radio   ]:not(old)
@@ -26,25 +30,25 @@ input[type=radio   ]:not(old)
     width: 0;
     height: 0;
 }
-input[type=checkbox]:not(old) + label,
-input[type=radio   ]:not(old) + label
+
+.left input[type=checkbox]:not(old) + label,
+.left input[type=radio   ]:not(old) + label
 {
-	display      : inline-block;
+	display      : block;
+	float: left;
 	line-height  : 1.5em;
 	color: black;
 	font-weight: bold;
-	cursor: pointer;
-	margin: 0.5em 10% 0.5em 0;
-	width: 60%;
-
+	margin: 0.5em 5% 0.5em 0;
+	width: 25%;
 }
-input[type=checkbox]:not(old) + label:hover,
-input[type=radio   ]:not(old) + label:hover
+.left input[type=checkbox]:not(old) + label:hover,
+.left input[type=radio   ]:not(old) + label:hover
 {
 	color: white;
 }
-input[type=checkbox]:not(old) + label > span,
-input[type=radio   ]:not(old) + label > span
+.left input[type=checkbox]:not(old) + label > span,
+.left input[type=radio   ]:not(old) + label > span
 {
 	display          : inline-block;
 	width            : 0.875em;
@@ -60,7 +64,7 @@ input[type=radio   ]:not(old) + label > span
 	background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
 	vertical-align   : bottom;
 }
-input[type=checkbox]:not(old):checked + label > span:before
+.left input[type=checkbox]:not(old):checked + label > span:before
 {
 	content     : '✓';
 	display     : block;
@@ -72,7 +76,7 @@ input[type=checkbox]:not(old):checked + label > span:before
 	text-shadow : 0 0 0.0714em rgb(115,153,77);
 	font-weight : bold;
 }
-input[type=radio]:not(old):checked +  label > span > span
+.left input[type=radio]:not(old):checked +  label > span > span
 {
 	display          : block;
 	width            : 0.5em;
@@ -98,6 +102,43 @@ input[type=radio]:not(old):checked +  label > span > span
 	z-index: 3;
 	padding-top: 1em;
 	box-shadow:2px 2px 5px #1F1F1F;
+}
+.menu .toggle
+{
+	float: left;
+}
+.menu label
+{
+	display: block;
+	padding: 0.5em 0 1em 0.3em;
+}
+.menu label img.default
+{
+	display: block;
+}
+.menu label img.alt
+{
+	display: none;
+}
+.menu label:hover img.default
+{
+	display: none;
+}
+.menu label:hover img.alt
+{
+	display: block;
+}
+.menu label:hover .description
+{
+	left: 100%;
+}
+.menu .toggle:checked + label img.default
+{
+	display: none;
+}
+.menu .toggle:checked + label img.alt
+{
+	display: block;
 }
 
 .menu .button
@@ -195,11 +236,6 @@ input[type=radio]:not(old):checked +  label > span > span
   	-o-transition-duration: 0.6s;
   	transition-duration: 0.6s;
 }
-#lesson:target
-{
-	left: 0;
-}
-
 .title
 {
 	text-align: center;
@@ -214,6 +250,7 @@ input[type=radio]:not(old):checked +  label > span > span
 	font-size: 1.3em;
 }
 
+/*mode*/
 #mode
 {
 	position: fixed;
@@ -229,9 +266,33 @@ input[type=radio]:not(old):checked +  label > span > span
   	-o-transition-duration: 0.6s;
   	transition-duration: 0.6s;
 }
-#mode:target
+
+/*log*/
+#logWindow
 {
-	left: 0%;
+	position: fixed;
+	background-color: #CC6600;
+	padding: 0.5em 0 0 77px;
+	left: -50%;
+	top: 50%;
+	width: 45%;
+	height: 50%;
+	overflow: auto;
+	box-shadow: 2px 2px 5px #1F1F1F;
+	-webkit-transition-duration: 0.6s;
+  	-moz-transition-duration: 0.6s;
+  	-o-transition-duration: 0.6s;
+  	transition-duration: 0.6s;
+}
+
+.log
+{
+	background-color: black;
+	color: white;
+	overflow: auto;
+	padding: 1%;
+	height: 80%;
+	width: 98%;
 }
 
 /*fixed right*/
@@ -253,16 +314,6 @@ input[type=radio]:not(old):checked +  label > span > span
 #result
 {
 	color: white;
-}
-
-.log
-{
-	background-color: black;
-	color: white;
-	overflow: auto;
-	padding: 1%;
-	height: 80%;
-	width: 98%;
 }
 
 input[name=submit]

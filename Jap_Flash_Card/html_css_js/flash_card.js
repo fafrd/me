@@ -142,3 +142,23 @@ function clearlog()
 	log(" ");
 }
 
+function toggle(checkBox)
+{
+	if(checkBox.checked)
+	{
+		document.getElementById(checkBox.name).style.left='0%';
+	}
+	else document.getElementById(checkBox.name).style.left='-50%';
+}
+
+function clearSlide()
+{
+	var toggle = document.getElementsByClassName('toggle');
+	var i = 0;
+	while(i < toggle.length)
+	{
+		toggle[i].checked = false;
+		document.getElementById(toggle[i].name).style.left='-50%'; 
+		i++;
+	}
+}
