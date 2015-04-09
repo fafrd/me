@@ -930,7 +930,7 @@ var lesson5 =
 	{
 		romanji: "saafuin",
 		eng: "surfing",
-		jap: "サーフイン",
+		jap: "サーフィン",
 	},
 	{
 		romanji: "shukudai",

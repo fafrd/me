@@ -2,7 +2,7 @@ umi=sea=うみ=
 kitte=postal stamp=きって=
 hagaki=postcard=はがき=
 kippu=ticket=きっぷ=
-saafuin=surfing=サーフイン=
+saafuin=surfing=サーフィン=
 shukudai=homework=しゅくだい=
 tesuto=test=テスト=
 tabemono=food=たべもの=
