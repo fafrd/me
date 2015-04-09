@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Flash Card</title>
+	<meta charset="UTF-8">
 	<link rel="shortcut icon" type="image/x-icon" href="html_css_js/assets/icon-64-black.png"/>
 	<link rel="stylesheet" type="text/css" charset="utf-8" href="html_css_js/flash_card.css">
 	<script type: "text/javascript" charset="utf-8" src="Library/JCLibrary/library.js"></script>
@@ -40,7 +41,9 @@
 			</a>
 		</div>
 	</div>
+
 	<!--left Screen-->
+	
 	<div class="left" id="left">
 		<div class="default" id="default">
 			Welcome to Flash Card!
@@ -48,20 +51,30 @@
 			<p>It should work best on latest versions of all browsers (talking to you IE users).</p>
 			<p class="credit">
 				Created by Lam Bui.<br><br>
-				Icons taken or modified from <a href="http://icons8.com/web-app/10747/No-Parking">icons8.com</a>
-				.
+				Icons taken or modified from <a href="http://icons8.com/web-app/10747/No-Parking">icons8.com</a>.
 			</p>
 		</div>
 		<!--operation1-->
 		<div class="radioLesson" id="lesson">
 			<div class="title">Choose lesson:</div>
 			<div class="optionContainer">
-				<input class="radioLesson" type="radio" name="lesson" id="lesson1" 		value="lesson1" 	onclick="chooseLesson(document.getElementsByName('lesson'));" checked>	<label for="lesson1"><span><span></span></span>	Lesson 1 			</label><br>
-				<input class="radioLesson" type="radio" name="lesson" id="lesson2" 		value="lesson2" 	onclick="chooseLesson(document.getElementsByName('lesson'));">			<label for="lesson2"><span><span></span></span>	Lesson 2 			</label><br>
-				<input class="radioLesson" type="radio" name="lesson" id="lesson3" 		value="lesson3" 	onclick="chooseLesson(document.getElementsByName('lesson'));">			<label for="lesson3"><span><span></span></span>	Lesson 3 			</label><br>
-				<input class="radioLesson" type="radio" name="lesson" id="lesson4" 		value="lesson4" 	onclick="chooseLesson(document.getElementsByName('lesson'));">			<label for="lesson4"><span><span></span></span>	Lesson 4 			</label><br>
-				<input class="radioLesson" type="radio" name="lesson" id="ru_verb" 		value="ru_verb" 	onclick="chooseLesson(document.getElementsByName('lesson'));">			<label for="ru_verb"><span><span></span></span>	ru Verb 			</label><br>
-				<input class="radioLesson" type="radio" name="lesson" id="u_verb_irr" 	value="u_verb_irr" 	onclick="chooseLesson(document.getElementsByName('lesson'));">			<label for="u_verb_irr"><span><span></span></span> u Verb and Irregular</label>
+				<input class="radioLesson" type="radio" name="lesson" id="lesson1" value="lesson1" onclick="chooseLesson(document.getElementsByName('lesson'));" checked><label for="lesson1"><span><span></span></span>Lesson 1</label>
+
+				<input class="radioLesson" type="radio" name="lesson" id="lesson2" value="lesson2" 	onclick="chooseLesson(document.getElementsByName('lesson'));"><label for="lesson2"><span><span></span></span>Lesson 2</label>
+
+				<input class="radioLesson" type="radio" name="lesson" id="lesson3" value="lesson3" onclick="chooseLesson(document.getElementsByName('lesson'));"><label for="lesson3"><span><span></span></span>Lesson 3</label>
+
+				<input class="radioLesson" type="radio" name="lesson" id="lesson4" value="lesson4" onclick="chooseLesson(document.getElementsByName('lesson'));"><label for="lesson4"><span><span></span></span>Lesson 4</label>
+
+				<input class="radioLesson" type="radio" name="lesson" id="lesson5" value="lesson5" onclick="chooseLesson(document.getElementsByName('lesson'));"><label for="lesson5"><span><span></span></span>Lesson 5</label>
+	
+				<input class="radioLesson" type="radio" name="lesson" id="ru_verb" value="ru_verb" onclick="chooseLesson(document.getElementsByName('lesson'));"><label for="ru_verb"><span><span></span></span>る Verb</label>
+	
+				<input class="radioLesson" type="radio" name="lesson" id="u_verb_irr" value="u_verb_irr" onclick="chooseLesson(document.getElementsByName('lesson'));"><label for="u_verb_irr"><span><span></span></span>う Verb and Irregular</label>
+
+				<input class="radioLesson" type="radio" name="lesson" id="i_adj" value="i_adj" onclick="chooseLesson(document.getElementsByName('lesson'));"><label for="i_adj"><span><span></span></span>い Adjective</label>
+
+				<input class="radioLesson" type="radio" name="lesson" id="na_adj" value="na_adj" onclick="chooseLesson(document.getElementsByName('lesson'));"><label for="na_adj"><span><span></span></span>な Adjective</label>
 			</div>
 		</div>
 
@@ -69,13 +82,11 @@
 		<div class="radioMode" id="mode">
 			<div class="title">Choose mode:</div>
 			<div class="optionContainer">
-				<input class="radioMode" type="radio" name="mode" id="mode1" value="1" onclick="chooseMode(document.getElementsByName('mode'));" checked>	<label for="mode1"><span><span></span></span> Translate japanese words 	</label><br>
-				<input class="radioMode" type="radio" name="mode" id="mode2" value="2" onclick="chooseMode(document.getElementsByName('mode'));" >			<label for="mode2"><span><span></span></span> Translate english words 		</label>
+				<input class="radioMode" type="radio" name="mode" id="mode1" value="1" onclick="chooseMode(document.getElementsByName('mode'));" ><label for="mode1"><span><span></span></span>Translate japanese words</label>
+				<input class="radioMode" type="radio" name="mode" id="mode2" value="2" onclick="chooseMode(document.getElementsByName('mode'));" checked><label for="mode2"><span><span></span></span>Translate english words</label>
+				<input class="checkRandom" type="checkbox" name="random" id="random" onclick="chooseRandom();"> <label for="random"><span></span>Random</label>
+			</div>
 
-			</div>
-			<div class="randomDiv">
-				<input class="checkRandom" type="checkbox" name="random" id="random" onclick="chooseRandom();"> <label for="random"><span></span> Random</label>
-			</div>
 		</div>
 
 	</div>
@@ -84,7 +95,7 @@
 		<div id="question"><script>show();</script></div>
 		<div class="inputField">
 			<input name="inputBox" id="inputBox" type="text" onkeydown="keyPress(event.keyCode);" autocomplete="off">
-			<input name="submit" id="submitButton" type="submit" onclick="execute();">
+			<input name="submit" id="submitButton" type="submit" onclick="execute();" value="">
 		</div>
 		<div id="result">-</div><br>
 		<button onclick="clearlog();">Clear</button>

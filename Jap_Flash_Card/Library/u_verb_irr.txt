@@ -1,7 +1,7 @@
 //3=
 iku=to go=いく=
-kaeru=to go back/to return=かえる=
-kiku=to listen/to hear=きく=
+kaeru=to go back/ to return=かえる=
+kiku=to listen/ to hear/ to ask=きく=
 nomu=to drink=のむ=
 hanasu=to speak/to talk=はなす=
 yomu=to read=よむ=
@@ -16,3 +16,7 @@ kaku=to write=かく=
 toru=to take=とる=
 matsu=to wait=まつ=
 wakaru=to understand=わかる=
+//5=
+oyogu=to swim=およぐ=
+noru=to ride/ to board=のる=
+yaru=to perform=やる=

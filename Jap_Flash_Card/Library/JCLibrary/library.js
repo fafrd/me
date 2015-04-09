@@ -904,6 +904,135 @@ var lesson4 =
 		jap: "にちようび",
 	},
 ];
+var lesson5 = 
+[
+	"lesson5",
+	{
+		romanji: "umi",
+		eng: "sea",
+		jap: "うみ",
+	},
+	{
+		romanji: "kitte",
+		eng: "postal stamp",
+		jap: "きって",
+	},
+	{
+		romanji: "hagaki",
+		eng: "postcard",
+		jap: "はがき",
+	},
+	{
+		romanji: "kippu",
+		eng: "ticket",
+		jap: "きっぷ",
+	},
+	{
+		romanji: "saafuin",
+		eng: "surfing",
+		jap: "サーフイン",
+	},
+	{
+		romanji: "shukudai",
+		eng: "homework",
+		jap: "しゅくだい",
+	},
+	{
+		romanji: "tesuto",
+		eng: "test",
+		jap: "テスト",
+	},
+	{
+		romanji: "tabemono",
+		eng: "food",
+		jap: "たべもの",
+	},
+	{
+		romanji: "nomimono",
+		eng: "drink",
+		jap: "のみもの",
+	},
+	{
+		romanji: "tanjoobi",
+		eng: "birthday",
+		jap: "たんじょうび",
+	},
+	{
+		romanji: "tenki",
+		eng: "weather",
+		jap: "てんき",
+	},
+	{
+		romanji: "basu",
+		eng: "bus",
+		jap: "バス",
+	},
+	{
+		romanji: "hikooki",
+		eng: "airplane",
+		jap: "ひこうき",
+	},
+	{
+		romanji: "heya",
+		eng: "room",
+		jap: "へや",
+	},
+	{
+		romanji: "boku",
+		eng: "I (used by men)",
+		jap: "ぼく",
+	},
+	{
+		romanji: "yasumi",
+		eng: "holiday; day off; absence",
+		jap: "やすみ",
+	},
+	{
+		romanji: "ryokoo",
+		eng: "travel",
+		jap: "りょこう",
+	},
+	{
+		romanji: "isshoni",
+		eng: "together",
+		jap: "いっしょに",
+	},
+	{
+		romanji: "sugoku",
+		eng: "extremely",
+		jap: "すごく",
+	},
+	{
+		romanji: "sorekara",
+		eng: "and then",
+		jap: "それから",
+	},
+	{
+		romanji: "daijoobu",
+		eng: "it's okay; not to worry; everything is under control",
+		jap: "だいじょうぶ",
+	},
+	{
+		romanji: "totemo",
+		eng: "very",
+		jap: "とても",
+	},
+	{
+		romanji: "donna",
+		eng: "what kind of...",
+		jap: "どんな",
+	},
+	{
+		romanji: "~mai",
+		eng: "[counter for flat object] ex: 1 sheet, 1 pedal",
+		jap: "～まい",
+	},
+	{
+		romanji: "~made",
+		eng: "to (a place); as far as (a place); till (a time)",
+		jap: "～まで",
+	},
+];
 var ru_verb = 
 [
 	"ru_verb",
@@ -932,6 +1061,11 @@ var ru_verb =
 		eng: "to be there (living object)",
 		jap: "いる",
 	},
+	{
+		romanji: "dekakeru",
+		eng: "to go out",
+		jap: "でかける",
+	},
 ];
 var u_verb_irr = 
 [
@@ -943,12 +1077,12 @@ var u_verb_irr =
 	},
 	{
 		romanji: "kaeru",
-		eng: "to go back/to return",
+		eng: "to go back/ to return",
 		jap: "かえる",
 	},
 	{
 		romanji: "kiku",
-		eng: "to listen/to hear",
+		eng: "to listen/ to hear/ to ask",
 		jap: "きく",
 	},
 	{
@@ -1016,6 +1150,154 @@ var u_verb_irr =
 		eng: "to understand",
 		jap: "わかる",
 	},
+	{
+		romanji: "oyogu",
+		eng: "to swim",
+		jap: "およぐ",
+	},
+	{
+		romanji: "noru",
+		eng: "to ride/ to board",
+		jap: "のる",
+	},
+	{
+		romanji: "yaru",
+		eng: "to perform",
+		jap: "やる",
+	},
+];
+var i_adj = 
+[
+	"i_adj",
+	{
+		romanji: "atarashii",
+		eng: "new",
+		jap: "あたらしい",
+	},
+	{
+		romanji: "atsui(暑い)",
+		eng: "hot (weather)",
+		jap: "あつい",
+	},
+	{
+		romanji: "atsui(熱い)",
+		eng: "hot (thing)",
+		jap: "あつい",
+	},
+	{
+		romanji: "isogashii",
+		eng: "busy (people/days)",
+		jap: "いそがしい",
+	},
+	{
+		romanji: "ookii",
+		eng: "large",
+		jap: "おおきい",
+	},
+	{
+		romanji: "omoshiroi",
+		eng: "interesting; funny",
+		jap: "おもしろい",
+	},
+	{
+		romanji: "kakkoii",
+		eng: "good-looking",
+		jap: "かっこい",
+	},
+	{
+		romanji: "kowai",
+		eng: "frightening",
+		jap: "こわい",
+	},
+	{
+		romanji: "samui",
+		eng: "cold (weather)",
+		jap: "さむい",
+	},
+	{
+		romanji: "tanoshii",
+		eng: "fun",
+		jap: "たのしい",
+	},
+	{
+		romanji: "chiisai",
+		eng: "small",
+		jap: "ちいさい",
+	},
+	{
+		romanji: "tsumaranai",
+		eng: "boring",
+		jap: "つまらない",
+	},
+	{
+		romanji: "furui",
+		eng: "old (thing)",
+		jap: "ふるい",
+	},
+	{
+		romanji: "muzukashii",
+		eng: "difficult",
+		jap: "むずかしい",
+	},
+	{
+		romanji: "yasashii",
+		eng: "easy (problem); kind (person)",
+		jap: "やさしい",
+	},
+	{
+		romanji: "yasui",
+		eng: "cheap",
+		jap: "やすい",
+	},
+];
+var na_adj = 
+[
+	"na_adj",
+	{
+		romanji: "kirai(na)",
+		eng: "disguested with",
+		jap: "きらい（な）",
+	},
+	{
+		romanji: "kirei(na)",
+		eng: "beautiful; clean",
+		jap: "きれい（な）",
+	},
+	{
+		romanji: "genki(na)",
+		eng: "healthy; energetic",
+		jap: "げんき（な）",
+	},
+	{
+		romanji: "shizuka(na)",
+		eng: "quiet",
+		jap: "しずか（な）",
+	},
+	{
+		romanji: "suki(na)",
+		eng: "fond of",
+		jap: "すき（な）",
+	},
+	{
+		romanji: "daikirai(na)",
+		eng: "to hate",
+		jap: "だいきらい（な）",
+	},
+	{
+		romanji: "daisuki(na)",
+		eng: "very fond of",
+		jap: "だいすき（な）",
+	},
+	{
+		romanji: "nigiyaka(na)",
+		eng: "lively",
+		jap: "にぎやか（な）",
+	},
+	{
+		romanji: "hima(na)",
+		eng: "not busy",
+		jap: "ひま（な）",
+	},
 ];
 var library =
 [
@@ -1023,6 +1305,9 @@ var library =
 	lesson2,
 	lesson3,
 	lesson4,
+	lesson5,
 	ru_verb,
 	u_verb_irr,
+	i_adj,
+	na_adj,
 ];

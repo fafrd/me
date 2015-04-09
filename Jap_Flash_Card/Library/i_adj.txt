@@ -1,0 +1,17 @@
+//5=
+atarashii=new=あたらしい=
+atsui(暑い)=hot (weather)=あつい=
+atsui(熱い)=hot (thing)=あつい=
+isogashii=busy (people/days)=いそがしい=
+ookii=large=おおきい=
+omoshiroi=interesting; funny=おもしろい=
+kakkoii=good-looking=かっこい=
+kowai=frightening=こわい=
+samui=cold (weather)=さむい=
+tanoshii=fun=たのしい=
+chiisai=small=ちいさい=
+tsumaranai=boring=つまらない=
+furui=old (thing)=ふるい=
+muzukashii=difficult=むずかしい=
+yasashii=easy (problem); kind (person)=やさしい=
+yasui=cheap=やすい=

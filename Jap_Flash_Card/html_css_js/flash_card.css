@@ -14,29 +14,29 @@ div
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
-.title
-{
-	text-align: center;
-	color: white;
-	font: bold 3em 'Source Sans Pro', sans-serif;
-}
-
 input[type=checkbox]:not(old),
 input[type=radio   ]:not(old)
 {
 	visibility: hidden;
-	margin    : 0.2em;
-	opacity: 0;
+	border-width: 0;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 input[type=checkbox]:not(old) + label,
 input[type=radio   ]:not(old) + label
 {
 	display      : inline-block;
-	margin-left  : -2em;
 	line-height  : 1.5em;
 	color: black;
 	font-weight: bold;
 	cursor: pointer;
+	margin: 0.5em 10% 0.5em 0;
+	width: 60%;
+
 }
 input[type=checkbox]:not(old) + label:hover,
 input[type=radio   ]:not(old) + label:hover
@@ -49,9 +49,9 @@ input[type=radio   ]:not(old) + label > span
 	display          : inline-block;
 	width            : 0.875em;
 	height           : 0.875em;
-	margin           : 0.25em 0.5em 0.25em 0.25em;
-	border           : 0.0625em solid rgb(192,192,192);
-	border-radius    : 0.25em;
+	margin           : 0.25em 0.5em 0.25em 0em;
+	border           : 1px solid rgb(192,192,192);
+	border-radius    : 3px;
 	background       : rgb(224,224,224);
 	background-image :    -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
 	background-image :     -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
@@ -89,7 +89,6 @@ input[type=radio]:not(old):checked +  label > span > span
 }
 
 /*div.menu family*/
-
 .menu
 {
 	position: fixed;
@@ -109,7 +108,7 @@ input[type=radio]:not(old):checked +  label > span > span
 .menu .description
 {
 	position: absolute;
-	left: 100%;
+	left: -1000%;
 	background-color: white;
 	border-top-right-radius: 12px;
 	border-bottom-right-radius: 12px;
@@ -123,30 +122,30 @@ input[type=radio]:not(old):checked +  label > span > span
 }
 
 /*button*/
-div.menu .button img.default
+.menu .button img.default
 {
 	display: block;
 }
-div.menu .button img.alt, .description
+.menu .button img.alt
 {
 	display: none;
 }
 
-div.menu .button:hover img.default
+.menu .button:hover img.default
 {
 	display: none;
 }
-div.menu .button:hover img.alt
+.menu .button:hover img.alt
 {
 	display: block;
 }
-div.menu .button:hover .description
+.menu .button:hover .description
 {
-	display: inline-block;
+	left: 100%;
 }
 
 /*fixed left*/
-div.left
+.left
 {
 	position: fixed;
 	background-color: #006699;
@@ -169,6 +168,7 @@ div.left
 	font: bold 3em 'Source Sans Pro', sans-serif;
 	text-align: center;
 	color: white;
+	overflow: auto;
 	-webkit-transition-duration: 0.3s;
   	-moz-transition-duration: 0.3s;
   	-o-transition-duration: 0.3s;
@@ -184,10 +184,11 @@ div.left
 {
 	position: fixed;
 	background-color: #009933;
-	padding: 0.5em 0 0 5%;
+	padding: 0.5em 0 0 77px;
 	left: -50%;
 	width: 45%;
 	height: 50%;
+	overflow: auto;
 	box-shadow: 2px 2px 5px #1F1F1F;
 	-webkit-transition-duration: 0.6s;
   	-moz-transition-duration: 0.6s;
@@ -196,27 +197,20 @@ div.left
 }
 #lesson:target
 {
-	left: 0%;
+	left: 0;
 }
 
-.radioLesson .optionContainer
+.title
 {
-	width: 40%;
-	padding-left: 10%;
-	font-size: 1.3em;
+	text-align: center;
+	color: white;
+	font: bold 3em 'Source Sans Pro', sans-serif;
 }
 
-.radioMode .optionContainer
+.optionContainer
 {
-	width: 40%;
-	padding-left: 10%;
-	font-size: 1.3em;
-}
-
-.radioMode .randomDiv
-{
-	width: 40%;
-	padding-left: 10%;
+	margin-left: 10%;
+	width: 90%;
 	font-size: 1.3em;
 }
 
@@ -224,10 +218,11 @@ div.left
 {
 	position: fixed;
 	background-color: #CC6600;
-	padding: 0.5em 0 0 5%;
+	padding: 0.5em 0 0 77px;
 	left: -50%;
 	width: 45%;
 	height: 50%;
+	overflow: auto;
 	box-shadow: 2px 2px 5px #1F1F1F;
 	-webkit-transition-duration: 0.6s;
   	-moz-transition-duration: 0.6s;
@@ -270,6 +265,10 @@ div.left
 	width: 98%;
 }
 
+input[name=submit]
+{
+	display: none;
+}
 /*credit*/
 /*.credit
 {

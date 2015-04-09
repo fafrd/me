@@ -1,7 +1,7 @@
 var lessonName = "lesson1";
 var index = 1;
 var input = "";
-var mode = '1';
+var mode = '2';
 var random = false;
 
 function findChecked(arrayInput)

@@ -1,0 +1,25 @@
+umi=sea=うみ=
+kitte=postal stamp=きって=
+hagaki=postcard=はがき=
+kippu=ticket=きっぷ=
+saafuin=surfing=サーフイン=
+shukudai=homework=しゅくだい=
+tesuto=test=テスト=
+tabemono=food=たべもの=
+nomimono=drink=のみもの=
+tanjoobi=birthday=たんじょうび=
+tenki=weather=てんき=
+basu=bus=バス=
+hikooki=airplane=ひこうき=
+heya=room=へや=
+boku=I (used by men)=ぼく=
+yasumi=holiday; day off; absence=やすみ=
+ryokoo=travel=りょこう=
+isshoni=together=いっしょに=
+sugoku=extremely=すごく=
+sorekara=and then=それから=
+daijoobu=it's okay; not to worry; everything is under control=だいじょうぶ=
+totemo=very=とても=
+donna=what kind of...=どんな=
+~mai=[counter for flat object] ex: 1 sheet, 1 pedal=～まい=
+~made=to (a place); as far as (a place); till (a time)=～まで=

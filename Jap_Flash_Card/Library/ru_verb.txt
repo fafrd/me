@@ -5,3 +5,5 @@ neru=to sleep/to go to sleep=ねる=
 miru=to see/to look at/to watch=みる=
 //4=
 iru=to be there (living object)=いる=
+//5=
+dekakeru=to go out=でかける=
