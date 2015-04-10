@@ -12,17 +12,18 @@
 <body>
 	<!--Menu-->
 	<div class="menu">
-		<div class="button">
-			<a onclick="clearSlide();">
-				<div class="description">Intro / Overview</div>
-				<img class="default" src="html_css_js/assets/icon-64-black.png" alt="ori">
-				<img class="alt" src="html_css_js/assets/icon-64-white.png" alt="alt">
-			</a>
-		</div>
+		<!--toggle button, 'name' should be the same as which ever div's id that affected by toggling this input-->
+		<!--intro-->
+		<input class="toggle" type="checkbox" name="default" id="introToggle" onclick="toggle(document.getElementById('introToggle'));">
+		<label for="introToggle" id="introLabel">
+			<div class="description">Intro / Overview</div>
+			<img class="default" src="html_css_js/assets/icon-64-black.png" alt="ori">
+			<img class="alt" src="html_css_js/assets/icon-64-white.png" alt="alt">
+		</label>
 
 		<!--lessonChoice Menu-->
 		<input class="toggle" type="checkbox" name="lesson" id="lessonChoice" onclick="toggle(document.getElementById('lessonChoice'));">
-		<label for="lessonChoice">
+		<label for="lessonChoice" id="lessonChoiceLabel">
 			<div class="description">Choose lesson</div>
 			<img class="default" src="html_css_js/assets/Classroom-64.png" alt="ori">
 			<img class="alt" src="html_css_js/assets/Classroom-64-white.png" alt="alt">
@@ -30,7 +31,7 @@
 
 		<!--modeChoice Menu-->
 		<input class="toggle" type="checkbox" name="mode" id="modeChoice" onclick="toggle(document.getElementById('modeChoice'));">
-		<label for="modeChoice">
+		<label for="modeChoice" id="modeChoiceLabel">
 			<div class="description">Choose mode</div>
 			<img class="default" src="html_css_js/assets/Translation-64-black.png" alt="ori">
 			<img class="alt" src="html_css_js/assets/Translation-64-white.png" alt="alt">
@@ -38,25 +39,29 @@
 
 		<!--log Menu-->
 		<input class="toggle" type="checkbox" name="logWindow" id="logTerminal" onclick="toggle(document.getElementById('logTerminal'));">
-		<label for="logTerminal">
+		<label for="logTerminal" id="logLabel">
 			<div class="description">Log terminal</div>
 			<img class="default" src="html_css_js/assets/log-64-black.png" alt="ori">
 			<img class="alt" src="html_css_js/assets/log-64-white.png" alt="alt">
 		</label>
 	</div>
 
-	<!--left Screen-->
+	<!--Welcome-->
 	<div class="left" id="left">
 		<div class="default" id="default">
-			Welcome to Flash Card!
+			<h1>Welcome to Flash Card!</h1>
 			<p>This program helps students studying japanese vocabulary.</p>
 			<p>It should work best on latest versions of all browsers (talking to you IE users).</p>
+			<p class="credit">Created by Lam Bui.</p>
 			<p class="credit">
-				Created by Lam Bui.<br><br>
 				Icons taken or modified from <a href="http://icons8.com/web-app/10747/No-Parking">icons8.com</a>.
 			</p>
+			<div class="tagTitle"><div>Intro</div></div>
 		</div>
-		<!--lessonChoice-->
+	</div>
+
+	<!--lessonChoice-->
+	<div class="left" id="left">
 		<div class="radioLesson" id="lesson">
 			<div class="title">Choose lesson:</div>
 			<div class="optionContainer">
@@ -78,9 +83,12 @@
 
 				<input class="radioLesson" type="radio" name="lesson" id="na_adj" value="na_adj" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="na_adj"><span><span></span></span>な Adjective</label>
 			</div>
+			<div class="tagTitle"><div>lesson 1</div></div>
 		</div>
+	</div>
 
-		<!--modeChoice-->
+	<!--modeChoice-->
+	<div class="left" id="left">
 		<div class="radioMode" id="mode">
 			<div class="title">Choose mode:</div>
 			<div class="optionContainer">
@@ -88,15 +96,27 @@
 				<input class="radioMode" type="radio" name="mode" id="mode2" value="2" onclick="chooseMode(document.getElementsByClassName('radioMode'));" checked><label for="mode2"><span><span></span></span>Translate english words</label>
 				<input class="checkRandom" type="checkbox" name="random" id="random" onclick="chooseRandom();"> <label for="random"><span></span>Random</label>
 			</div>
+			<div class="tagTitle"><div>input japanese</div></div>
 		</div>
-
-		<!--logWindow-->
-		<div class="logWindow" id="logWindow">
-			<button onclick="clearlog();">Clear</button>
-			<div class="log" id="log">Log:<br></div>
-		</div>
-
 	</div>
+
+	<!--logWindow-->
+	<div class="left" id="left">
+		<div class="logWindow" id="logWindow">
+			<div class="title">
+				Log terminal
+			</div>
+			<div class="log" id="log">Log:<br></div>
+			<script>
+				log("● mode: " + mode + "	random: " + random + ".")
+				log("● loading lesson: " + lessonName);
+				log(" ");
+			</script>
+			<div class="tagTitle"><div>log terminal</div></div>
+			<button onclick="clearlog();">Clear</button>
+		</div>
+	</div>
+
 	<!--right Screen-->
 	<div class="right">
 		<div id="question"><script>show();</script></div>

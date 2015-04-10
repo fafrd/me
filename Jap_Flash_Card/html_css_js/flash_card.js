@@ -2,7 +2,7 @@ var lessonName = "lesson1";
 var index = 1;
 var input = "";
 var mode = '2';
-var random = document.getElementById('random').checked;
+var random = false;
 
 function findChecked(arrayInput)
 {
@@ -86,6 +86,35 @@ function execute()
 	else
 	{
 		input = document.getElementById("inputBox").value;
+		if(input == "!help")
+		{
+			log("USEFUL COMMANDS:");
+			log("● !clear --- clear the log terminal.");
+			log("● !info  --- display information about this page.")
+			log("more commands will be added later.");
+			log(" ");
+			window.setTimeout('document.getElementById("inputBox").value = "";',0);
+			return;
+		}
+		if(input == "!clear")
+		{
+			clearlog();
+			window.setTimeout('document.getElementById("inputBox").value = "";',0);
+			return;
+		}
+		if(input == "!info")
+		{
+			log("INFO:");
+			var pIndex = 0;
+			while(pIndex < document.getElementsByTagName('p').length)
+			{
+				log(document.getElementsByTagName('p')[pIndex].innerHTML);
+				pIndex++;
+			}
+			log(" ");
+			window.setTimeout('document.getElementById("inputBox").value = "";',0);
+			return;
+		}
 		switch(mode)
 		{
 			case '1':
@@ -146,9 +175,9 @@ function toggle(checkBox)
 {
 	if(checkBox.checked)
 	{
-		document.getElementById(checkBox.name).style.left='0%';
+		document.getElementById(checkBox.name).style.left='0';
 	}
-	else document.getElementById(checkBox.name).style.left='-50%';
+	else document.getElementById(checkBox.name).style.left='-580px';
 }
 
 function clearSlide()
@@ -158,7 +187,12 @@ function clearSlide()
 	while(i < toggle.length)
 	{
 		toggle[i].checked = false;
-		document.getElementById(toggle[i].name).style.left='-50%'; 
+		document.getElementById(toggle[i].name).style.left='-30%'; 
 		i++;
 	}
+}
+
+function slideCorrect(input)
+{
+	var dimension = input.getBoundingClientRect();
 }
