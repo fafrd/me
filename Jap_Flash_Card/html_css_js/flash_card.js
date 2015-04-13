@@ -326,7 +326,7 @@ function commandInput(command)
 
 		default: success = false; break;
 	}
-	switch(tempCommand.substring(0, 5)) /*4-char tempCommand with parameter*/
+	switch(tempCommand.substring(0, tempCommand.indexOf(' '))) /* command with parameter*/
 	{
 		case "!goto":
 			success = true;
@@ -389,6 +389,5 @@ function gotoEntry(input)
 	if(integer == 0) integer = max;
 
 	index = integer;
-	console.log(index);
 	show();
 }
