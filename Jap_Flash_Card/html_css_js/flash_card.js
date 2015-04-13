@@ -40,6 +40,7 @@ function chooseRandom()
 		index = Math.floor((Math.random() * (library[findIndex(lessonName)].length-1)) + 1);
 		show();
 	}
+	document.getElementById('modeChoice').click();
 }
 
 function chooseLesson(input)
@@ -50,6 +51,7 @@ function chooseLesson(input)
 	index = 0;
 	execute();
 	dict();
+	document.getElementById('lessonChoice').click();
 }
 
 function chooseMode(input)
@@ -60,6 +62,7 @@ function chooseMode(input)
 	else document.getElementById('tagTitleMode').innerHTML = (input[i].id + " ⃠ Ran");
 	index = 0;
 	execute();
+	document.getElementById('modeChoice').click();
 }
 
 function show()
