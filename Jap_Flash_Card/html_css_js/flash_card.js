@@ -109,10 +109,13 @@ function execute()
 		input = document.getElementById("inputBox").value;
 		if(input == "!help")
 		{
-			log("USEFUL COMMANDS:");
+			logColor("execute !help", "green", true);
+			logColor("USEFUL COMMANDS:", "yellow", true);
 			log("● !clear --- clear the log terminal.");
 			log("● !info  --- show/hide information about this page.")
 			log("● !infoL  --- show information about this page in log.")
+			log("● !lesson  --- show/hide lesson list.")
+			log("● !mode  --- show/hide mode-selection page.")
 			log("● !log  --- show/hide log terminal.")
 			log("● !dict  --- show/hide dictionary.")
 			log("all commands will work if called from terminal.")
@@ -130,6 +133,7 @@ function execute()
 		}
 		if(input == "!log")
 		{
+			logColor("execute !log", "green", true);
 			document.getElementById('logTerminal').click();
 			window.setTimeout('document.getElementById("inputBox").value = "";',0);
 			return;
