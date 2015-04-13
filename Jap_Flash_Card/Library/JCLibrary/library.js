@@ -1255,7 +1255,7 @@ var na_adj =
 	"na_adj",
 	{
 		romanji: "kirai(na)",
-		eng: "disguested with",
+		eng: "disgusted with",
 		jap: "きらい（な）",
 	},
 	{
