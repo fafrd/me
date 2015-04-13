@@ -106,39 +106,19 @@ function execute()
 	}
 	else
 	{
-		input = document.getElementById("inputBox").value;
-		if(input == "!help")
-		{
-			logColor("execute !help", "green", true);
-			logColor("USEFUL COMMANDS:", "yellow", true);
-			log("● !clear --- clear the log terminal.");
-			log("● !info  --- show/hide information about this page.")
-			log("● !infoL  --- show information about this page in log.")
-			log("● !lesson  --- show/hide lesson list.")
-			log("● !mode  --- show/hide mode-selection page.")
-			log("● !log  --- show/hide log terminal.")
-			log("● !dict  --- show/hide dictionary.")
-			log("all commands will work if called from terminal.")
-			log("only !clear, !info, and !log will work outside.")
-			log("more commands will be added later.");
-			log(" ");
-			window.setTimeout('document.getElementById("inputBox").value = "";',0);
-			return;
-		}
-		if(input == "!clear")
-		{
-			clearlog();
-			window.setTimeout('document.getElementById("inputBox").value = "";',0);
-			return;
-		}
-		if(input == "!log")
-		{
-			logColor("execute !log", "green", true);
-			document.getElementById('logTerminal').click();
-			window.setTimeout('document.getElementById("inputBox").value = "";',0);
-			return;
-		}
 		var result = document.getElementById("result");
+		input = document.getElementById("inputBox").value;
+		if(input[0] == '!')
+		{
+			result.innerHTML = "";
+			if(commandInput(input))
+				addText(result, "execute " + input, "green", true);
+			else
+				addText(result, "'" + input + "'" + " is an unknown command. Can not execute!", "red", true);
+			window.setTimeout('document.getElementById("inputBox").value = "";',0);
+			window.setTimeout('document.getElementById("result").innerHTML = "-";',3000);
+			return;
+		}
 		switch(mode)
 		{
 			case '1':
@@ -261,33 +241,56 @@ function addText(target, input, color, newline)
 	}
 }
 
-function commandInput()
+function commandInputEmpty()
 {
-	var command = document.getElementById("logInput").value;
-	switch(command)
+	var input = document.getElementById("logInput").value;
+	commandInput(input);
+}
+
+function commandInput(command)
+{
+	var success = true;
+	var tempCommand = command;
+	switch(tempCommand[1]) /*check modifier*/
+	{
+		case 'F':
+			if(document.getElementById('logTerminal').checked)
+				document.getElementById('logTerminal').click();
+			tempCommand = tempCommand[0] + tempCommand.substring(2, tempCommand.length); /*erase 'F'*/
+			break;
+	}
+	switch(tempCommand)
 	{
 		case "!help":
-			logColor("execute " + command, "green", true);
-			logColor("USEFUL COMMANDS:", "yellow", true);
-			log("● !clear --- clear the log terminal.");
-			log("● !info  --- show/hide information about this page.")
-			log("● !infoL  --- show information about this page in log.")
-			log("● !lesson  --- show/hide lesson list.")
-			log("● !mode  --- show/hide mode-selection page.")
-			log("● !log  --- show/hide log terminal.")
-			log("● !dict  --- show/hide dictionary.")
-			log("all commands will work if called from terminal.")
-			log("only !clear, !info, and !log will work outside.")
-			log("more commands will be added later.");
+			if(document.getElementById('logTerminal').checked != true)
+				document.getElementById('logTerminal').click();
+			logColor("execute " + tempCommand, "green", true);
+			logColor("USEFUL tempCommandS:", "yellow", true);
+			logColor("all commands start with !.", "lightblue", true);
+			logColor("more commands will be added later.", "lightblue", true);
+			logColor("● !clear --- clear the log terminal.");
+			log("● !info  --- show/hide information about this page.");
+			log("● !infoL  --- show information about this page in log.");
+			log("● !lesson  --- show/hide lesson list.");
+			log("● !mode  --- show/hide mode-selection page.");
+			log("● !log  --- show/hide log terminal.");
+			log("● !dict  --- show/hide dictionary.");
+			log("● !goto p1 --- jump to entry 'p1' (p1 is int parameter).");
+			logColor("USEFUL MODIFIER:", "yellow", true);
+			logColor("all modifiers follow right after !.", "lightblue", true);
+			logColor("more modifiers will be added later.", "lightblue", true);
+			logColor("(modifier with empty command may work but throw error message.)", "lightblue", true);
+			logColor("Ex: !Finfo --- force close log terminal before execute !info.", "lightblue", true);
+			log("● F --- force close log terminal before execute.");
 			log(" ");
 			break;
 
 		case "!clear":
-			log("execute " + command);
+			log("execute " + tempCommand);
 			clearlog(); break;
 
 		case "!infoL":
-			logColor("execute " + command, "green", true);
+			logColor("execute " + tempCommand, "green", true);
 			logColor("INFO:", "yellow", true);
 			var pIndex = 0;
 			while(pIndex < document.getElementsByTagName('p').length)
@@ -299,33 +302,47 @@ function commandInput()
 			break;
 
 		case "!info":
-			logColor("execute " + command, "green", true);
+			clearSlide(document.getElementById('introToggle'));
+			logColor("execute " + tempCommand, "green", true);
 			document.getElementById('introToggle').click(); break;
 
-		case "!log":
-			logColor("execute " + command, "green", true);
-			document.getElementById('logTerminal').click(); break;
-
-		case "!dict":
-			logColor("execute " + command, "green", true);
-			document.getElementById('dictButton').click(); break;
-
 		case "!lesson":
-			logColor("execute " + command, "green", true);
+			clearSlide(document.getElementById('lessonChoice'));
+			logColor("execute " + tempCommand, "green", true);
 			document.getElementById('lessonChoice').click(); break;
 
 		case "!mode":
-			logColor("execute " + command, "green", true);
+			clearSlide(document.getElementById('modeChoice'));
+			logColor("execute " + tempCommand, "green", true);
 			document.getElementById('modeChoice').click(); break;
 
-		default:
-			logColor("'" + command + "'" + " is an unknown command. Can not execute!", "red", true); break;
+		case "!log":
+			logColor("execute " + tempCommand, "green", true);
+			document.getElementById('logTerminal').click(); break;
+
+		case "!dict":
+			logColor("execute " + tempCommand, "green", true);
+			document.getElementById('dictButton').click(); break;
+
+		default: success = false; break;
 	}
+	switch(tempCommand.substring(0, 5)) /*4-char tempCommand with parameter*/
+	{
+		case "!goto":
+			success = true;
+			logColor("execute " + tempCommand, "green", true);
+			tempCommand = tempCommand.substring(6, tempCommand.length);
+			gotoEntry(tempCommand);
+			break;
+	}
+	if(!success) logColor("'" + command + "'" + " is an unknown command. Can not execute!", "red", true);
 	window.setTimeout('document.getElementById("logInput").value = "!";',0);
 
 	/*auto scroll to bottom*/
 	var chat_div = document.getElementById('logOverflow');
 	chat_div.scrollTop = chat_div.scrollHeight;
+
+	return success;
 }
 
 function toggle(checkBox)
@@ -337,19 +354,41 @@ function toggle(checkBox)
 	else document.getElementById(checkBox.name).style.left='-580px'; //hidden
 }
 
-function clearSlide()
+function clearSlide(exempt)
 {
 	var toggle = document.getElementsByClassName('toggle');
 	var i = 0;
 	while(i < toggle.length)
 	{
-		toggle[i].checked = false;
-		document.getElementById(toggle[i].name).style.left='-30%'; 
-		i++;
+		if(toggle[i] == exempt || toggle[i] == document.getElementById('dictButton') || toggle[i] == document.getElementById('logTerminal'))
+		{
+			i++;
+			continue;
+		}
+		else
+		{
+			toggle[i].checked = false;
+			document.getElementById(toggle[i].name).style.left='-580px'; 
+			i++;
+		}
 	}
 }
 
 function slideCorrect(input)
 {
 	var dimension = input.getBoundingClientRect();
+}
+
+function gotoEntry(input)
+{
+	var integer = parseInt(input);
+	var i = findIndex(lessonName);
+	var max = library[i].length - 1;
+
+	integer = integer%max;
+	if(integer == 0) integer = max;
+
+	index = integer;
+	console.log(index);
+	show();
 }
