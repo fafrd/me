@@ -5,6 +5,7 @@ body
 	margin: 0;
 	border: 0;
     padding: 0;
+    overflow: auto;
 }
 div
 {
@@ -204,12 +205,14 @@ input[type=radio   ]:not(old)
 	width: 500px;
 	height: 100%;
 	top: 16px;
-	text-align: center;
 	color: white;
 	-webkit-transition-duration: 0.3s;
   	-moz-transition-duration: 0.3s;
   	-o-transition-duration: 0.3s;
   	transition-duration: 0.3s;
+  	-webkit-box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
 }
 #default p
 {
@@ -239,6 +242,9 @@ input[type=radio   ]:not(old)
   	-o-transition-duration: 0.3s;
   	transition-duration: 0.3s;
   	border-bottom-right-radius: 12px;
+  	-webkit-box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
 }
 .title
 {
@@ -272,6 +278,9 @@ input[type=radio   ]:not(old)
   	-o-transition-duration: 0.3s;
   	transition-duration: 0.3s;
   	border-bottom-right-radius: 12px;
+  	-webkit-box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
 }
 .tagTitle
 {
@@ -301,15 +310,18 @@ input[type=radio   ]:not(old)
 	padding: 0.5em 15px 0 140px;
 	left: -580px;
 	width: 500px;
-	height: 500px;
-	top: 280px;
+	height: 460px;
+	top: 368px;
 	-webkit-transition-duration: 0.3s;
   	-moz-transition-duration: 0.3s;
   	-o-transition-duration: 0.3s;
   	transition-duration: 0.3s;
+  	-webkit-box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: -2px 5px 10px 0px rgba(0,0,0,0.75);
 }
 
-.log
+.logOverflow
 {
 	background-color: black;
 	color: white;
@@ -317,6 +329,14 @@ input[type=radio   ]:not(old)
 	padding: 1%;
 	height: 70%;
 	width: 90%;
+}
+.loginputBox
+{
+	border: none;
+	outline-width: 0;
+	color: white;
+	background-color: black;
+	width: 430px;
 }
 
 /*fixed right*/
@@ -332,17 +352,121 @@ input[type=radio   ]:not(old)
 
 #question
 {
-	color: white;
+	color: #006699;
+	background-color: white;
+	text-align: center;
+	width: 1200px;
+	font: 2em 'Source Sans Pro', sans-serif;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.inputField
+{
+	position: fixed;
+}
+textarea
+{
+	border: none;
+	padding: 10px;
+	margin: none;
+	font: 2em 'Source Sans Pro', sans-serif;
+	resize: none;
+	width: 555px;
+	height: 200px;
+	margin-top: 20px;
+	margin-right: 25px;
+	border-bottom-left-radius: 10px;
+	-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
 }
 
 #result
 {
-	color: white;
+	position: fixed;
+	padding: 10px;
+	left: 800px;
+	color: #006699;
+	background-color: white;
+	width: 555px;
+	height: 200px;
+	margin-top: 20px;
+	margin-left: 25px;
+	font: 2em 'Source Sans Pro', sans-serif;
+	border-bottom-right-radius: 10px;
+	-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
 }
+
 
 input[name=submit]
 {
 	display: none;
+}
+
+/*dictionary*/
+#dictBlock
+{
+	position: fixed;
+	top: 382px;
+	width: 1200px;
+}
+#dictionary
+{
+	font: 2em 'Source Sans Pro', sans-serif;
+	text-align: center;
+	background-color: white;
+	overflow: auto;
+	height: 380px;
+	padding: 2%;
+	-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+#dictCover
+{
+	position: absolute;
+	width: 100%;
+	height: 120%;
+	top: -64px;
+	-webkit-transition-duration: 0.3s;
+  	-moz-transition-duration: 0.3s;
+  	-o-transition-duration: 0.3s;
+  	transition-duration: 0.3s;
+}
+.dictTitle
+{
+	position: inherit;
+	background-color: #9966FF;
+	text-align: center;
+	color: white;
+	margin-left: 25%;
+	width: 50%;
+	height: 50px;
+	font: bold 2em 'Source Sans Pro', sans-serif;
+	border-top-right-radius: 12px;
+	border-top-left-radius: 12px;
+	-webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+}
+.dictCover
+{
+	position: inherit;
+	background-color: #9966FF;
+	width: 100%;
+	margin-top: 50px;
+	height: 120%;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	-webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
 }
 /*credit*/
 /*.credit

@@ -26,10 +26,17 @@ function findIndex(lessonName)
 
 function chooseRandom()
 {
-	if(random) 	random = false;
+	var input = document.getElementsByClassName('radioMode');
+	var i = findChecked(input);
+	if(random)
+	{
+		random = false;
+		document.getElementById('tagTitleMode').innerHTML = (input[i].id + " ⃠ Ran");
+	}
 	else
 	{
 		random = true;
+		document.getElementById('tagTitleMode').innerHTML = (input[i].id + " Ran");
 		index = Math.floor((Math.random() * (library[findIndex(lessonName)].length-1)) + 1);
 		show();
 	}
@@ -39,14 +46,18 @@ function chooseLesson(input)
 {
 	var i = findChecked(input);
 	lessonName = input[i].value;
+	document.getElementById('tagTitleLesson').innerHTML = input[i].id;
 	index = 0;
 	execute();
+	dict();
 }
 
 function chooseMode(input)
 {
 	var i = findChecked(input);
 	mode = input[i].value;
+	if(random) document.getElementById('tagTitleMode').innerHTML = (input[i].id + " Ran");
+	else document.getElementById('tagTitleMode').innerHTML = (input[i].id + " ⃠ Ran");
 	index = 0;
 	execute();
 }
@@ -81,7 +92,14 @@ function execute()
 		{
 			index++;
 		}
-		log("● mode: " + mode + "	random: " + random + ".");
+		logColor("● mode: ", "yellow", false); log(mode);
+		logColor("● random: ", "yellow", false); log(random);
+		logColor("● loading lesson: ", "yellow", false); log(lessonName);
+		log(" ");
+		window.setTimeout('show()',500);
+		window.setTimeout('document.getElementById("result").innerHTML = "-";',3000);
+		window.setTimeout('document.getElementById("inputBox").value = "";',0);
+		return;
 	}
 	else
 	{
@@ -90,7 +108,12 @@ function execute()
 		{
 			log("USEFUL COMMANDS:");
 			log("● !clear --- clear the log terminal.");
-			log("● !info  --- display information about this page.")
+			log("● !info  --- show/hide information about this page.")
+			log("● !infoL  --- show information about this page in log.")
+			log("● !log  --- show/hide log terminal.")
+			log("● !dict  --- show/hide dictionary.")
+			log("all commands will work if called from terminal.")
+			log("only !clear, !info, and !log will work outside.")
 			log("more commands will be added later.");
 			log(" ");
 			window.setTimeout('document.getElementById("inputBox").value = "";',0);
@@ -102,32 +125,41 @@ function execute()
 			window.setTimeout('document.getElementById("inputBox").value = "";',0);
 			return;
 		}
-		if(input == "!info")
+		if(input == "!log")
 		{
-			log("INFO:");
-			var pIndex = 0;
-			while(pIndex < document.getElementsByTagName('p').length)
-			{
-				log(document.getElementsByTagName('p')[pIndex].innerHTML);
-				pIndex++;
-			}
-			log(" ");
+			document.getElementById('logTerminal').click();
 			window.setTimeout('document.getElementById("inputBox").value = "";',0);
 			return;
 		}
+		var result = document.getElementById("result");
 		switch(mode)
 		{
 			case '1':
 				if(library[i][index].eng == input)
-					document.getElementById("result").innerHTML = "right!";
+				{
+					result.innerHTML = "";
+					addText(result, "Correct!", "green", true);
+				}
 				else
-					document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].eng;
+				{
+					result.innerHTML = "";
+					addText(result, "Incorrect! Right answer is: ", "red", true);
+					addText(result, library[i][index].eng, "gray", true);
+				}
 				break;
 			case '2':
 				if(library[i][index].romanji == input || library[i][index].jap == input)
-					document.getElementById("result").innerHTML = "right!";
+				{
+					result.innerHTML = "";
+					addText(result, "Correct!", "green", true);
+				}
 				else
-					document.getElementById("result").innerHTML = "wrong! Right answer is: " + library[i][index].romanji + " --- " + library[i][index].jap;
+				{
+					result.innerHTML = "";
+					addText(result, "Incorrect! Right answer is: ", "red", true);
+					addText(result, library[i][index].romanji, "gray", true);
+					addText(result, library[i][index].jap, "gray", true);
+				}
 				break;
 			default: break;
 		}
@@ -139,19 +171,58 @@ function execute()
 	console.log("input: 	" + input);
 	console.log("output: " +document.getElementById("result").innerHTML);
 	console.log(" ");
-	log(document.getElementById("question").innerHTML);
-	log("input: " + input);
-	log("output: " +document.getElementById("result").innerHTML);
+	logColor(document.getElementById("question").innerHTML, "lightblue", true);
+	logColor("input: ", "yellow", false); log(input);
+	logColor("output: ", "yellow", false); log(document.getElementById("result").innerHTML);
 	log(" ");
 	window.setTimeout('show()',500);
 	window.setTimeout('document.getElementById("result").innerHTML = "-";',3000);
 	window.setTimeout('document.getElementById("inputBox").value = "";',0);
 }
 
-function keyPress(e)
+function dict()
+{
+	var dict = document.getElementById("dictionary");
+	dict.innerHTML = " ";
+	var i = findIndex(lessonName);
+	var dictIndex = 1; //skip 'library[i]'s name'
+	while(dictIndex < library[i].length)
+	{
+		addText(dict, "Romanji: ", "blue", false); addText(dict, library[i][dictIndex].romanji, "black", true);
+		addText(dict, "Japanese: ", "blue", false); addText(dict, library[i][dictIndex].jap, "black", true);
+		addText(dict, "English: ", "blue", false); addText(dict, library[i][dictIndex].eng, "black", true);
+		var br = document.createElement("br"); dict.appendChild(br); //new line element
+		dictIndex++;
+	}
+}
+
+function toggleDict(checkBox)
+{
+	if(checkBox.checked)
+	{
+		document.getElementById(checkBox.name).style.top='400px';
+	}
+	else document.getElementById(checkBox.name).style.top='-64px';
+}
+
+function keyPress(e, submitButton)
 {
 	if (e == 13)
-		document.getElementById('submitButton').click();
+		submitButton.click();
+}
+
+function logColor(input, color, newline)
+{
+	var log = document.getElementById("log");
+	var span = document.createElement("span");
+	span.textContent = input;
+	span.style.color = color;
+	log.appendChild(span);
+	if(newline)
+	{
+		var br = document.createElement("br");
+    	log.appendChild(br);
+	}
 }
 
 function log(input)
@@ -161,7 +232,7 @@ function log(input)
 	var br = document.createElement("br");
     log.appendChild(br);
     /*auto scroll to bottom*/
-	var chat_div = document.getElementById('log');
+	var chat_div = document.getElementById('logOverflow');
 	chat_div.scrollTop = chat_div.scrollHeight;
 }
 
@@ -171,13 +242,93 @@ function clearlog()
 	log(" ");
 }
 
+function addText(target, input, color, newline)
+{
+	var span = document.createElement("span");
+	span.textContent = input;
+	span.style.color = color;
+	target.appendChild(span);
+	if(newline)
+	{
+		var br = document.createElement("br");
+    	target.appendChild(br);
+	}
+}
+
+function commandInput()
+{
+	var command = document.getElementById("logInput").value;
+	switch(command)
+	{
+		case "!help":
+			logColor("execute " + command, "green", true);
+			logColor("USEFUL COMMANDS:", "yellow", true);
+			log("● !clear --- clear the log terminal.");
+			log("● !info  --- show/hide information about this page.")
+			log("● !infoL  --- show information about this page in log.")
+			log("● !lesson  --- show/hide lesson list.")
+			log("● !mode  --- show/hide mode-selection page.")
+			log("● !log  --- show/hide log terminal.")
+			log("● !dict  --- show/hide dictionary.")
+			log("all commands will work if called from terminal.")
+			log("only !clear, !info, and !log will work outside.")
+			log("more commands will be added later.");
+			log(" ");
+			break;
+
+		case "!clear":
+			log("execute " + command);
+			clearlog(); break;
+
+		case "!infoL":
+			logColor("execute " + command, "green", true);
+			logColor("INFO:", "yellow", true);
+			var pIndex = 0;
+			while(pIndex < document.getElementsByTagName('p').length)
+			{
+				log(document.getElementsByTagName('p')[pIndex].innerHTML);
+				pIndex++;
+			}
+			log(" ");
+			break;
+
+		case "!info":
+			logColor("execute " + command, "green", true);
+			document.getElementById('introToggle').click(); break;
+
+		case "!log":
+			logColor("execute " + command, "green", true);
+			document.getElementById('logTerminal').click(); break;
+
+		case "!dict":
+			logColor("execute " + command, "green", true);
+			document.getElementById('dictButton').click(); break;
+
+		case "!lesson":
+			logColor("execute " + command, "green", true);
+			document.getElementById('lessonChoice').click(); break;
+
+		case "!mode":
+			logColor("execute " + command, "green", true);
+			document.getElementById('modeChoice').click(); break;
+
+		default:
+			logColor("'" + command + "'" + " is an unknown command. Can not execute!", "red", true); break;
+	}
+	window.setTimeout('document.getElementById("logInput").value = "!";',0);
+
+	/*auto scroll to bottom*/
+	var chat_div = document.getElementById('logOverflow');
+	chat_div.scrollTop = chat_div.scrollHeight;
+}
+
 function toggle(checkBox)
 {
 	if(checkBox.checked)
 	{
-		document.getElementById(checkBox.name).style.left='0';
+		document.getElementById(checkBox.name).style.left='0'; //show
 	}
-	else document.getElementById(checkBox.name).style.left='-580px';
+	else document.getElementById(checkBox.name).style.left='-580px'; //hidden
 }
 
 function clearSlide()

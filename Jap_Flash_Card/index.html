@@ -37,6 +37,14 @@
 			<img class="alt" src="html_css_js/assets/Translation-64-white.png" alt="alt">
 		</label>
 
+		<!--dictionary-->
+		<input class="toggle" type="checkbox" name="dictCover" id="dictButton" onclick="toggleDict(document.getElementById('dictButton'));">
+		<label for="dictButton" id="dictButtonLabel">
+			<div class="description">Show dictionary</div>
+			<img class="default" src="html_css_js/assets/dictionary-64-black.png" alt="ori">
+			<img class="alt" src="html_css_js/assets/dictionary-64-white.png" alt="alt">
+		</label>
+
 		<!--log Menu-->
 		<input class="toggle" type="checkbox" name="logWindow" id="logTerminal" onclick="toggle(document.getElementById('logTerminal'));">
 		<label for="logTerminal" id="logLabel">
@@ -52,9 +60,12 @@
 			<h1>Welcome to Flash Card!</h1>
 			<p>This program helps students studying japanese vocabulary.</p>
 			<p>It should work best on latest versions of all browsers (talking to you IE users).</p>
+			<p>Type !log then !help for more info.</p>
 			<p class="credit">Created by Lam Bui.</p>
 			<p class="credit">
-				Icons taken or modified from <a href="http://icons8.com/web-app/10747/No-Parking">icons8.com</a>.
+				Special thanks to: <br><br>
+				Icon provider: <a href="http://icons8.com/web-app/10747/No-Parking">icons8.com</a>.<br><br>
+				CSS tools: <a href="http://www.cssmatic.com/">cssmatic.com</a>.<br><br>
 			</p>
 			<div class="tagTitle"><div>Intro</div></div>
 		</div>
@@ -65,25 +76,25 @@
 		<div class="radioLesson" id="lesson">
 			<div class="title">Choose lesson:</div>
 			<div class="optionContainer">
-				<input class="radioLesson" type="radio" name="lesson" id="lesson1" value="lesson1" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));" checked><label for="lesson1"><span><span></span></span>Lesson 1</label>
+				<input class="radioLesson" type="radio" name="lesson" id="Lesson 1" value="lesson1" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));" checked><label for="Lesson 1"><span><span></span></span>Lesson 1</label>
 
-				<input class="radioLesson" type="radio" name="lesson" id="lesson2" value="lesson2" 	onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="lesson2"><span><span></span></span>Lesson 2</label>
+				<input class="radioLesson" type="radio" name="lesson" id="Lesson 2" value="lesson2" 	onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="Lesson 2"><span><span></span></span>Lesson 2</label>
 
-				<input class="radioLesson" type="radio" name="lesson" id="lesson3" value="lesson3" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="lesson3"><span><span></span></span>Lesson 3</label>
+				<input class="radioLesson" type="radio" name="lesson" id="Lesson 3" value="lesson3" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="Lesson 3"><span><span></span></span>Lesson 3</label>
 
-				<input class="radioLesson" type="radio" name="lesson" id="lesson4" value="lesson4" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="lesson4"><span><span></span></span>Lesson 4</label>
+				<input class="radioLesson" type="radio" name="lesson" id="Lesson 4" value="lesson4" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="Lesson 4"><span><span></span></span>Lesson 4</label>
 
-				<input class="radioLesson" type="radio" name="lesson" id="lesson5" value="lesson5" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="lesson5"><span><span></span></span>Lesson 5</label>
+				<input class="radioLesson" type="radio" name="lesson" id="Lesson 5" value="lesson5" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="Lesson 5"><span><span></span></span>Lesson 5</label>
 	
-				<input class="radioLesson" type="radio" name="lesson" id="ru_verb" value="ru_verb" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="ru_verb"><span><span></span></span>る Verb</label>
+				<input class="radioLesson" type="radio" name="lesson" id="る Verb" value="ru_verb" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="る Verb"><span><span></span></span>る Verb</label>
 	
-				<input class="radioLesson" type="radio" name="lesson" id="u_verb_irr" value="u_verb_irr" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="u_verb_irr"><span><span></span></span>う Verb and Irregular</label>
+				<input class="radioLesson" type="radio" name="lesson" id="う Verb and Irregular" value="u_verb_irr" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="う Verb and Irregular"><span><span></span></span>う Verb and Irregular</label>
 
-				<input class="radioLesson" type="radio" name="lesson" id="i_adj" value="i_adj" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="i_adj"><span><span></span></span>い Adjective</label>
+				<input class="radioLesson" type="radio" name="lesson" id="い Adjective" value="i_adj" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="い Adjective"><span><span></span></span>い Adjective</label>
 
-				<input class="radioLesson" type="radio" name="lesson" id="na_adj" value="na_adj" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="na_adj"><span><span></span></span>な Adjective</label>
+				<input class="radioLesson" type="radio" name="lesson" id="な Adjective" value="na_adj" onclick="chooseLesson(document.getElementsByClassName('radioLesson'));"><label for="な Adjective"><span><span></span></span>な Adjective</label>
 			</div>
-			<div class="tagTitle"><div>lesson 1</div></div>
+			<div class="tagTitle"><div id="tagTitleLesson">Lesson 1</div></div>
 		</div>
 	</div>
 
@@ -92,11 +103,11 @@
 		<div class="radioMode" id="mode">
 			<div class="title">Choose mode:</div>
 			<div class="optionContainer">
-				<input class="radioMode" type="radio" name="mode" id="mode1" value="1" onclick="chooseMode(document.getElementsByClassName('radioMode'));" ><label for="mode1"><span><span></span></span>Translate japanese words</label>
-				<input class="radioMode" type="radio" name="mode" id="mode2" value="2" onclick="chooseMode(document.getElementsByClassName('radioMode'));" checked><label for="mode2"><span><span></span></span>Translate english words</label>
+				<input class="radioMode" type="radio" name="mode" id="Mode 1" value="1" onclick="chooseMode(document.getElementsByClassName('radioMode'));" ><label for="Mode 1"><span><span></span></span>Mode 1: Translate japanese words</label>
+				<input class="radioMode" type="radio" name="mode" id="Mode 2" value="2" onclick="chooseMode(document.getElementsByClassName('radioMode'));" checked><label for="Mode 2"><span><span></span></span>Mode 2: Translate english words</label>
 				<input class="checkRandom" type="checkbox" name="random" id="random" onclick="chooseRandom();"> <label for="random"><span></span>Random</label>
 			</div>
-			<div class="tagTitle"><div>input japanese</div></div>
+			<div class="tagTitle"><div id="tagTitleMode">Mode 2 ⃠ Ran</div></div>
 		</div>
 	</div>
 
@@ -106,14 +117,19 @@
 			<div class="title">
 				Log terminal
 			</div>
-			<div class="log" id="log">Log:<br></div>
-			<script>
-				log("● mode: " + mode + "	random: " + random + ".")
-				log("● loading lesson: " + lessonName);
-				log(" ");
-			</script>
+			<div class="logOverflow" id="logOverflow">
+				<div class="log" id="log">Log:<br>
+				<script>
+					logColor("● mode: ", "yellow", false); log(mode);
+					logColor("● random: ", "yellow", false); log(random);
+					logColor("● loading lesson: ", "yellow", false); log(lessonName);
+					log(" ");
+				</script>
+				</div>
+				<input class="loginputBox" id="logInput" type="text" onkeydown="keyPress(event.keyCode, document.getElementById('logsubmitButton'));" autocomplete="off" value="!">
+				<input name="submit" id="logsubmitButton" type="submit" onclick="commandInput();" value="">
+			</div>
 			<div class="tagTitle"><div>log terminal</div></div>
-			<button onclick="clearlog();">Clear</button>
 		</div>
 	</div>
 
@@ -121,10 +137,19 @@
 	<div class="right">
 		<div id="question"><script>show();</script></div>
 		<div class="inputField">
-			<input name="inputBox" id="inputBox" type="text" onkeydown="keyPress(event.keyCode);" autocomplete="off">
+			<textarea id="inputBox" onkeydown="keyPress(event.keyCode, document.getElementById('submitButton'));" placeholder="enter answer here!"></textarea>
 			<input name="submit" id="submitButton" type="submit" onclick="execute();" value="">
 		</div>
 		<div id="result">-</div><br>
+
+		<!--dictionary-->
+		<div id="dictBlock">
+			<div id="dictCover">
+				<div class="dictTitle">Dictionary</div>
+				<div class="dictCover"></div>
+			</div>
+			<div id="dictionary"><script>dict();</script></div>
+		</div>
 	</div>
 	<!--Credit
 	<div class="credit">Created by Lam Bui.</div>-->
