@@ -181,7 +181,6 @@ function execute()
 	logColor(document.getElementById("question").innerHTML, "lightblue", true);
 	logColor("input: ", "yellow", false); log(input);
 	logColor("output: ", "yellow", false); log(document.getElementById("result").innerHTML);
-	log(" ");
 	window.setTimeout('show()',500);
 	window.setTimeout('document.getElementById("result").innerHTML = "-";',3000);
 	window.setTimeout('document.getElementById("inputBox").value = "";',0);
